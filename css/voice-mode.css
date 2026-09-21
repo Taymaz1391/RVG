@@ -1,0 +1,142 @@
+/* ==========================================================================
+   TOM AI - Advanced Voice Mode Overlay (ChatGPT Voice Parity)
+   ========================================================================== */
+
+.voice-call-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #182622 0%, #0d0f0e 70%, #000000 100%);
+  z-index: 600;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 24px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.voice-call-overlay.active {
+  display: flex;
+}
+
+.voice-call-header {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.voice-status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.voice-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-emerald);
+  box-shadow: 0 0 12px var(--accent-emerald);
+  animation: pulseBrain 1.2s infinite;
+}
+
+.voice-status-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e4e4e7;
+  letter-spacing: 0.3px;
+}
+
+.btn-close-voice {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.btn-close-voice:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Central Glowing Fluid Orb */
+.voice-orb-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto 0;
+}
+
+#voiceOrbCanvas {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 45px rgba(20, 184, 166, 0.45));
+}
+
+.voice-caption-box {
+  width: 100%;
+  max-width: 540px;
+  min-height: 48px;
+  text-align: center;
+  font-size: 16px;
+  color: #cbd5e1;
+  line-height: 1.5;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(8px);
+  margin-bottom: 24px;
+}
+
+/* Voice Bottom Controls */
+.voice-call-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-voice-ctrl {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.btn-mute-mic {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+.btn-mute-mic:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+.btn-mute-mic.muted {
+  background: var(--danger-color);
+}
+
+.btn-end-call {
+  background: #ef4444;
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(239, 68, 68, 0.4);
+}
+.btn-end-call:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}

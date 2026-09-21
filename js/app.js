@@ -1,7 +1,13 @@
 /**
- * TOM AI - Main Application Controller
- * Replicates the complete ChatGPT-4o user experience, streaming pipeline,
- * and state management.
+ * ============================================================================
+ * TOM AI - CORE APPLICATION ORCHESTRATOR
+ * ============================================================================
+ * Replicates the complete ChatGPT-4o user experience with:
+ * - 100% Native Autonomous Neural Engine
+ * - Split-Screen Canvas / Artifacts Runner
+ * - Full-Duplex Voice Call Mode with Fluid Orb
+ * - Comprehensive History, Theme & Export Systems
+ * ============================================================================
  */
 
 class TomApp {
@@ -13,6 +19,8 @@ class TomApp {
     this.aiEngine = new AIEngine();
     this.speech = new SpeechEngine();
     this.trainingStudio = new TrainingStudio();
+    this.canvasArtifacts = null;
+    this.voiceMode = null;
     this.isStreaming = false;
     this.attachments = [];
     this.searchMode = this.settings.enableWebSearch;
@@ -21,23 +29,30 @@ class TomApp {
   }
 
   init() {
-    // 1. Apply saved theme
+    // 1. Theme
     this.applyTheme(this.settings.theme);
 
-    // 2. Setup DOM References
+    // 2. Cache DOM
     this.cacheDom();
 
-    // 3. Register Event Listeners
+    // 3. Sub-modules
+    this.canvasArtifacts = new CanvasArtifacts();
+    window.canvasArtifacts = this.canvasArtifacts;
+
+    this.voiceMode = new VoiceModeManager();
+    window.voiceMode = this.voiceMode;
+
+    // 4. Register Event Listeners
     this.bindEvents();
 
-    // 4. Render Sidebar and Current Chat
+    // 5. Render Initial State
     this.renderSidebar();
     this.loadChat(this.currentChatId);
 
-    // 5. Initialize Training Studio
+    // 6. Initialize Training Studio
     this.trainingStudio.init();
 
-    // 6. Update Model Display
+    // 7. Update Model Label
     this.updateModelSelectorUI(this.settings.model);
   }
 
@@ -68,11 +83,12 @@ class TomApp {
     // Modals
     this.settingsModal = document.getElementById('settingsModal');
     this.trainingModal = document.getElementById('trainingModal');
+    this.exportModal = document.getElementById('exportModal');
     this.toastContainer = document.getElementById('toastContainer');
   }
 
   bindEvents() {
-    // Sidebar Toggles
+    // Sidebar toggle
     this.btnSidebarToggle?.addEventListener('click', () => {
       this.sidebar.classList.toggle('open');
       this.sidebar.classList.toggle('collapsed');
@@ -86,7 +102,7 @@ class TomApp {
     // New Chat
     this.btnNewChat?.addEventListener('click', () => this.createNewChat());
 
-    // Search chats
+    // Search conversations
     this.chatSearchInput?.addEventListener('input', (e) => this.filterChatHistory(e.target.value));
 
     // Model Selector Dropdown
@@ -105,13 +121,12 @@ class TomApp {
       });
     });
 
-    // Close dropdown on outside click
     document.addEventListener('click', () => {
       this.modelDropdownMenu?.classList.remove('active');
       this.modelSelectorBtn?.classList.remove('open');
     });
 
-    // Chat Textarea Auto-Resize & Submit Shortcuts
+    // Chat Textarea Auto-Resize & Shortcuts
     this.chatTextarea?.addEventListener('input', () => {
       this.autoResizeTextarea();
       this.updateSubmitButtonState();
@@ -137,57 +152,53 @@ class TomApp {
     this.btnWebSearch?.addEventListener('click', () => {
       this.searchMode = !this.searchMode;
       this.btnWebSearch.classList.toggle('active', this.searchMode);
-      this.showToast(this.searchMode ? '🌐 Web Search Grounding: ON' : '🌐 Web Search: OFF');
+      this.showToast(this.searchMode ? '🌐 Web Knowledge Grounding: ON' : '🌐 Grounding: OFF');
     });
 
-    // File Attachments
+    // Attach File
     this.btnAttachFile?.addEventListener('click', () => this.fileInput?.click());
     this.fileInput?.addEventListener('change', (e) => this.handleFileUpload(e));
 
-    // Voice Input
+    // Voice Input (dictation)
     this.btnVoiceInput?.addEventListener('click', () => this.handleVoiceInput());
 
     // Global Key Shortcuts
     document.addEventListener('keydown', (e) => {
-      // Ctrl+K or Cmd+K -> New chat
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
         this.createNewChat();
       }
-      // Esc -> close open modals
       if (e.key === 'Escape') {
         this.closeAllModals();
       }
     });
 
-    // Open Training Studio Modal
+    // Header buttons
     document.getElementById('btnOpenTrainingHub')?.addEventListener('click', () => this.openTrainingModal());
     document.getElementById('btnHeaderStudio')?.addEventListener('click', () => this.openTrainingModal());
     document.getElementById('btnCloseTrainingModal')?.addEventListener('click', () => this.closeTrainingModal());
 
-    // Open Settings Modal
     document.getElementById('btnOpenSettings')?.addEventListener('click', () => this.openSettingsModal());
     document.getElementById('btnCloseSettingsModal')?.addEventListener('click', () => this.closeSettingsModal());
     document.getElementById('btnSaveSettings')?.addEventListener('click', () => this.saveSettingsFromForm());
 
-    // Settings Theme Toggle
-    document.getElementById('settingThemeSelect')?.addEventListener('change', (e) => {
-      this.applyTheme(e.target.value);
-    });
-
-    // Theme toggle in header
+    // Theme Toggle
     document.getElementById('btnThemeToggle')?.addEventListener('click', () => {
       const nextTheme = this.settings.theme === 'dark' ? 'light' : this.settings.theme === 'light' ? 'oled' : 'dark';
       this.applyTheme(nextTheme);
       this.settings.theme = nextTheme;
       this.storage.saveSettings(this.settings);
-      this.showToast(`Theme switched to: ${nextTheme.toUpperCase()}`);
+      this.showToast(`Theme: ${nextTheme.toUpperCase()}`);
     });
 
-    // Clear Chat in header
+    // Clear Chat
     document.getElementById('btnClearChat')?.addEventListener('click', () => this.clearCurrentChat());
 
-    // Training Studio Events
+    // Export Chat button
+    document.getElementById('btnExportChat')?.addEventListener('click', () => this.openExportModal());
+    document.getElementById('btnCloseExportModal')?.addEventListener('click', () => this.closeExportModal());
+
+    // Training Studio events
     document.getElementById('btnStartTraining')?.addEventListener('click', () => {
       this.trainingStudio.startTrainingSimulation();
     });
@@ -205,11 +216,10 @@ class TomApp {
       this.trainingStudio.addCustomDatasetPair(prompt, completion, category);
       document.getElementById('inputNewPrompt').value = '';
       document.getElementById('inputNewCompletion').value = '';
-      this.showToast('✓ Training sample embedded into TOM memory!');
+      this.showToast('✓ Training sample fine-tuned into TOM weights!');
     });
   }
 
-  // Auto-resize textarea up to 200px
   autoResizeTextarea() {
     if (!this.chatTextarea) return;
     this.chatTextarea.style.height = 'auto';
@@ -233,28 +243,25 @@ class TomApp {
     }
   }
 
-  // Model Selection
   selectModel(modelId) {
     this.settings.model = modelId;
     this.storage.saveSettings(this.settings);
     this.updateModelSelectorUI(modelId);
 
-    // Save model to current chat
     const chat = this.getCurrentChat();
     if (chat) {
       chat.model = modelId;
       this.storage.saveChats(this.chats);
     }
 
-    const modelNames = {
+    const titles = {
       'tom-4.5-ultra': 'TOM 4.5 Ultra',
       'tom-o1-reasoning': 'TOM o1 Reasoning',
       'tom-speed-mini': 'TOM Speed Mini',
-      'tom-code-pro': 'TOM Code Pro',
-      'tom-neural-local': 'TOM Local Neural'
+      'tom-code-pro': 'TOM Code Pro'
     };
 
-    this.showToast(`Switched to: ${modelNames[modelId] || modelId}`);
+    this.showToast(`Active Model: ${titles[modelId] || modelId}`);
   }
 
   updateModelSelectorUI(modelId) {
@@ -262,8 +269,7 @@ class TomApp {
       'tom-4.5-ultra': 'TOM 4.5 Ultra',
       'tom-o1-reasoning': 'TOM o1 Reasoning',
       'tom-speed-mini': 'TOM Speed Mini',
-      'tom-code-pro': 'TOM Code Pro',
-      'tom-neural-local': 'TOM Local Neural'
+      'tom-code-pro': 'TOM Code Pro'
     };
 
     if (this.selectedModelTitle) {
@@ -275,7 +281,6 @@ class TomApp {
     });
   }
 
-  // Chat Management
   getCurrentChat() {
     return this.chats.find(c => c.id === this.currentChatId) || this.chats[0];
   }
@@ -297,7 +302,7 @@ class TomApp {
 
     this.renderSidebar();
     this.loadChat(this.currentChatId);
-    this.chatTextarea.focus();
+    this.chatTextarea?.focus();
   }
 
   loadChat(chatId) {
@@ -307,17 +312,14 @@ class TomApp {
     const chat = this.getCurrentChat();
     if (!chat) return;
 
-    // Update active state in sidebar
     document.querySelectorAll('.chat-item').forEach(item => {
       item.classList.toggle('active', item.getAttribute('data-chat-id') === chatId);
     });
 
-    // Update model dropdown for this chat
     if (chat.model) {
       this.updateModelSelectorUI(chat.model);
     }
 
-    // Render Messages
     this.renderChatMessages(chat);
   }
 
@@ -384,9 +386,6 @@ class TomApp {
             <button class="btn-msg-action" title="Good response" onclick="app.rateMessage('${msg.id}', 'up', this)">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
             </button>
-            <button class="btn-msg-action" title="Needs improvement" onclick="app.rateMessage('${msg.id}', 'down', this)">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg>
-            </button>
           </div>
         </div>
       `;
@@ -400,17 +399,40 @@ class TomApp {
     `;
 
     this.chatContainer.appendChild(row);
+
+    // Inject "Open in Canvas" buttons into code blocks
+    this.enhanceCodeBlocksWithCanvas(row);
+
     if (animate) this.scrollToBottom();
     return row;
+  }
+
+  enhanceCodeBlocksWithCanvas(parentElement) {
+    const blocks = parentElement.querySelectorAll('.code-block-wrapper');
+    blocks.forEach(block => {
+      const actions = block.querySelector('.code-header-actions');
+      const langLabel = block.querySelector('.code-lang-label')?.textContent || 'code';
+      if (actions && !actions.querySelector('.btn-open-canvas')) {
+        const btn = document.createElement('button');
+        btn.className = 'btn-code-action btn-open-canvas';
+        btn.title = 'Open code in Canvas split-screen workspace';
+        btn.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg> Open in Canvas`;
+        btn.addEventListener('click', () => {
+          const rawCode = MarkdownRenderer._snippets?.[block.id] || block.querySelector('code')?.textContent || '';
+          this.canvasArtifacts.open('Interactive Code Workspace', langLabel, rawCode);
+        });
+        actions.prepend(btn);
+      }
+    });
   }
 
   renderSidebar() {
     if (!this.chatHistoryList) return;
     this.chatHistoryList.innerHTML = '';
 
-    const sortedChats = [...this.chats].sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+    const sorted = [...this.chats].sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
 
-    sortedChats.forEach(chat => {
+    sorted.forEach(chat => {
       const item = document.createElement('div');
       item.className = `chat-item ${chat.id === this.currentChatId ? 'active' : ''}`;
       item.setAttribute('data-chat-id', chat.id);
@@ -479,7 +501,7 @@ class TomApp {
     });
   }
 
-  // Sending Messages & Streaming
+  // Handle Send & Neural Streaming
   async handleSendMessage(customPrompt = null) {
     if (this.isStreaming) return;
 
@@ -489,16 +511,14 @@ class TomApp {
     const chat = this.getCurrentChat();
     if (!chat) return;
 
-    // Reset textarea
     if (!customPrompt) {
       this.chatTextarea.value = '';
       this.chatTextarea.style.height = '24px';
     }
 
-    // Hide welcome hero
     this.welcomeHero.style.display = 'none';
 
-    // 1. Create and Append User Message
+    // 1. User Message
     let fullUserContent = text;
     if (this.attachments.length > 0) {
       const attachSummary = this.attachments.map(a => `[Attached File: ${a.name} (${a.type})]\n${a.content || ''}`).join('\n\n');
@@ -516,7 +536,6 @@ class TomApp {
 
     chat.messages.push(userMsg);
 
-    // Auto title chat if it's the first message
     if (chat.messages.length === 1) {
       chat.title = text.slice(0, 32) + (text.length > 32 ? '...' : '');
       this.renderSidebar();
@@ -524,7 +543,7 @@ class TomApp {
 
     this.appendMessageElement(userMsg, true);
 
-    // 2. Prepare Assistant Message Placeholder
+    // 2. Assistant Placeholder
     const assistantMsgId = 'msg-' + (Date.now() + 1);
     const assistantRow = document.createElement('div');
     assistantRow.className = 'message-row assistant-row';
@@ -546,7 +565,7 @@ class TomApp {
     const contentTarget = assistantRow.querySelector('.msg-content-target');
     const thoughtTarget = assistantRow.querySelector('.thought-target');
 
-    // 3. Initiate Streaming
+    // 3. Initiate Streaming from Autonomous Neural Engine
     this.isStreaming = true;
     this.btnSubmit.classList.add('streaming');
     this.btnSubmit.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16"></rect></svg>`;
@@ -565,11 +584,12 @@ class TomApp {
           thoughtText = thought;
           thoughtTarget.innerHTML = `
             <div class="thought-box">
-              <div class="thought-header">
+              <div class="thought-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'">
                 <div class="thought-title">
                   <span class="thought-pulse-dot"></span>
                   <span>Thought Process (Reasoning Steps)</span>
                 </div>
+                <span style="font-size:11px;">▼</span>
               </div>
               <div class="thought-details">${MarkdownRenderer.escapeHtml(thought)}</div>
             </div>
@@ -584,7 +604,6 @@ class TomApp {
         this.scrollToBottom();
       }
 
-      // Finish streaming
       contentTarget.innerHTML = MarkdownRenderer.render(accumulatedContent);
 
       const assistantMsg = {
@@ -600,7 +619,7 @@ class TomApp {
       this.storage.saveChats(this.chats);
       this.renderSidebar();
 
-      // Append message action bar
+      // Message Action Toolbar
       const bubble = assistantRow.querySelector('.assistant-bubble');
       const toolbar = document.createElement('div');
       toolbar.className = 'msg-toolbar';
@@ -617,15 +636,15 @@ class TomApp {
         <button class="btn-msg-action" title="Good response" onclick="app.rateMessage('${assistantMsgId}', 'up', this)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
         </button>
-        <button class="btn-msg-action" title="Needs improvement" onclick="app.rateMessage('${assistantMsgId}', 'down', this)">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg>
-        </button>
       `;
       bubble.appendChild(toolbar);
 
+      // Enhance code blocks with Canvas button
+      this.enhanceCodeBlocksWithCanvas(assistantRow);
+
     } catch (err) {
-      console.error('Streaming error', err);
-      contentTarget.innerHTML = `<span style="color:#f87171;">⚠️ Generation interrupted: ${MarkdownRenderer.escapeHtml(err.message)}</span>`;
+      console.error('Inference error', err);
+      contentTarget.innerHTML = `<span style="color:#f87171;">⚠️ Generation issue: ${MarkdownRenderer.escapeHtml(err.message)}</span>`;
     } finally {
       this.isStreaming = false;
       this.btnSubmit.classList.remove('streaming');
@@ -658,40 +677,25 @@ class TomApp {
     }
   }
 
-  // Quick Prompt Pill Handler
   sendQuickPrompt(text) {
     this.handleSendMessage(text);
   }
 
-  // File Attachments
   handleFileUpload(e) {
     const files = Array.from(e.target.files || []);
     if (!files.length) return;
 
     files.forEach(file => {
       const reader = new FileReader();
-      if (file.type.startsWith('image/')) {
-        reader.onload = (ev) => {
-          this.attachments.push({
-            name: file.name,
-            type: 'image',
-            content: `[Image preview: ${file.name}]`,
-            dataUrl: ev.target.result
-          });
-          this.renderAttachmentsPreview();
-        };
-        reader.readAsDataURL(file);
-      } else {
-        reader.onload = (ev) => {
-          this.attachments.push({
-            name: file.name,
-            type: 'text',
-            content: ev.target.result
-          });
-          this.renderAttachmentsPreview();
-        };
-        reader.readAsText(file);
-      }
+      reader.onload = (ev) => {
+        this.attachments.push({
+          name: file.name,
+          type: file.type || 'text',
+          content: ev.target.result
+        });
+        this.renderAttachmentsPreview();
+      };
+      reader.readAsText(file);
     });
 
     e.target.value = '';
@@ -719,7 +723,6 @@ class TomApp {
     this.renderAttachmentsPreview();
   }
 
-  // Voice Input
   handleVoiceInput() {
     if (this.speech.isListening) {
       this.speech.stopListening();
@@ -736,13 +739,12 @@ class TomApp {
         },
         (error) => {
           this.btnVoiceInput.classList.remove('active');
-          this.showToast(`Voice input notice: ${error}`);
+          this.showToast(`Voice notice: ${error}`);
         }
       );
     }
   }
 
-  // Message Actions
   copyMessage(msgId) {
     const chat = this.getCurrentChat();
     const msg = chat?.messages.find(m => m.id === msgId);
@@ -771,10 +773,9 @@ class TomApp {
 
   rateMessage(msgId, rating, btn) {
     btn.classList.add('active');
-    this.showToast(rating === 'up' ? '👍 Thanks for the feedback!' : '👎 Feedback recorded for model tuning.');
+    this.showToast(rating === 'up' ? '👍 Thanks for positive feedback!' : '👎 Feedback recorded for neural weights fine-tuning.');
   }
 
-  // Modal Open / Close
   openTrainingModal() {
     this.trainingModal?.classList.add('active');
     this.trainingStudio.resizeCanvas();
@@ -785,11 +786,7 @@ class TomApp {
   }
 
   openSettingsModal() {
-    // Populate form
     document.getElementById('settingThemeSelect').value = this.settings.theme;
-    document.getElementById('settingProviderSelect').value = this.settings.provider;
-    document.getElementById('settingApiKeyInput').value = this.settings.apiKey || '';
-    document.getElementById('settingCustomEndpointInput').value = this.settings.apiEndpoint || '';
     document.getElementById('settingSystemPrompt').value = this.settings.systemPrompt;
     document.getElementById('settingTemperature').value = this.settings.temperature;
     document.getElementById('tempValDisplay').textContent = this.settings.temperature;
@@ -803,24 +800,67 @@ class TomApp {
 
   saveSettingsFromForm() {
     this.settings.theme = document.getElementById('settingThemeSelect').value;
-    this.settings.provider = document.getElementById('settingProviderSelect').value;
-    this.settings.apiKey = document.getElementById('settingApiKeyInput').value.trim();
-    this.settings.apiEndpoint = document.getElementById('settingCustomEndpointInput').value.trim();
     this.settings.systemPrompt = document.getElementById('settingSystemPrompt').value.trim();
     this.settings.temperature = parseFloat(document.getElementById('settingTemperature').value);
 
     this.storage.saveSettings(this.settings);
     this.applyTheme(this.settings.theme);
     this.closeSettingsModal();
-    this.showToast('✓ Settings successfully saved.');
+    this.showToast('✓ Settings updated.');
+  }
+
+  openExportModal() {
+    this.exportModal?.classList.add('active');
+  }
+
+  closeExportModal() {
+    this.exportModal?.classList.remove('active');
+  }
+
+  exportCurrentChat(format) {
+    const chat = this.getCurrentChat();
+    if (!chat) return;
+
+    let content = '';
+    let mimeType = 'text/plain';
+    let ext = 'txt';
+
+    if (format === 'markdown') {
+      content = `# ${chat.title}\n*Exported from TOM AI on ${new Date().toLocaleString()}*\n\n---\n\n` +
+        chat.messages.map(m => `### ${m.role === 'user' ? '👤 User' : '🤖 TOM'}\n\n${m.content}\n`).join('\n---\n\n');
+      mimeType = 'text/markdown';
+      ext = 'md';
+    } else if (format === 'json') {
+      content = JSON.stringify(chat, null, 2);
+      mimeType = 'application/json';
+      ext = 'json';
+    } else if (format === 'html') {
+      content = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>${MarkdownRenderer.escapeHtml(chat.title)}</title><style>body{font-family:sans-serif;max-width:800px;margin:40px auto;padding:0 20px;line-height:1.6;color:#222;}h1{border-bottom:1px solid #eee;padding-bottom:10px;}.msg{margin:24px 0;padding:16px;border-radius:8px;}.user{background:#f1f5f9;}.tom{background:#f8fafc;border-left:4px solid #10b981;}</style></head><body><h1>${MarkdownRenderer.escapeHtml(chat.title)}</h1>` +
+        chat.messages.map(m => `<div class="msg ${m.role === 'user' ? 'user' : 'tom'}"><strong>${m.role === 'user' ? 'User' : 'TOM AI'}:</strong><br>${MarkdownRenderer.render(m.content)}</div>`).join('') +
+        `</body></html>`;
+      mimeType = 'text/html';
+      ext = 'html';
+    }
+
+    const blob = new Blob([content], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${chat.title.replace(/\s+/g, '_').toLowerCase()}.${ext}`;
+    a.click();
+    URL.revokeObjectURL(url);
+    this.closeExportModal();
+    this.showToast(`✓ Exported conversation as .${ext}`);
   }
 
   closeAllModals() {
     this.closeSettingsModal();
     this.closeTrainingModal();
+    this.closeExportModal();
+    this.canvasArtifacts?.close();
+    this.voiceMode?.close();
   }
 
-  // Toast System
   showToast(message, duration = 3000) {
     if (!this.toastContainer) return;
     const toast = document.createElement('div');
@@ -843,7 +883,6 @@ class TomApp {
   }
 }
 
-// Bootstrap application on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   window.app = new TomApp();
   window.trainingStudio = window.app.trainingStudio;

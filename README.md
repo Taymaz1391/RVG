@@ -3,13 +3,13 @@
 <img src="./assets/logo.svg" width="120" height="120" alt="TOM AI Logo" />
 
 # 🧠 TOM AI (v4.5 Ultra)
-### Next-Generation Frontier Artificial Intelligence & Neural Studio
-*Engineered from the ground up to achieve complete parity with GPT-4o & o1 Reasoning.*
+### 100% Autonomous Neural Artificial Intelligence & Training Studio
+*Built completely from scratch (0 to 100) — ZERO external APIs, ZERO third-party keys.*
 
 [![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-22c55e?style=for-the-badge&logo=github)](https://Taymaz1391.github.io/RVG/)
-[![Live Status](https://img.shields.io/badge/Status-Frontier_Parity-10a37f?style=for-the-badge)](https://Taymaz1391.github.io/RVG/)
+[![Architecture](https://img.shields.io/badge/Architecture-Autonomous_Neural_Transformer-10a37f?style=for-the-badge)](https://Taymaz1391.github.io/RVG/)
+[![API Status](https://img.shields.io/badge/Zero_API-100%25_Self_Contained-0284c7?style=for-the-badge)](https://Taymaz1391.github.io/RVG/)
 [![UI Style](https://img.shields.io/badge/UI-ChatGPT_4o_Design-38bdf8?style=for-the-badge)](https://Taymaz1391.github.io/RVG/)
-[![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](./LICENSE)
 
 <br/>
 
@@ -28,39 +28,45 @@
 <h2>🇬🇧 English Overview</h2>
 </div>
 
-**TOM AI** is an advanced, high-performance conversational AI assistant and neural fine-tuning studio engineered from scratch. Designed with an exact ChatGPT-4o user interface, TOM features multi-provider streaming inference, step-by-step Chain-of-Thought (CoT) reasoning, syntax-highlighted code execution, dynamic memory embedding, and an interactive browser-based training lab.
+**TOM AI** is an autonomous, next-generation conversational artificial intelligence model and neural studio built entirely from scratch with **zero external API dependencies**. 
 
-### ✨ Core Features
+Unlike standard wrappers that call third-party APIs, TOM contains its own self-hosted **Multi-Head Self-Attention Transformer**, tokenization pipeline, dense vector embeddings, Chain-of-Thought (CoT) reasoning engine, split-screen interactive Canvas, and in-browser backpropagation training lab.
 
-1. **Frontier Model Architecture & Parity:**
-   - **TOM 4.5 Ultra:** Flagship reasoning, deep coding, and multimodal analysis rivaling GPT-4o.
-   - **TOM o1 Reasoning:** Step-by-step Chain-of-Thought thinking logs displayed prior to answering.
-   - **TOM Speed Mini:** Sub-second latency response generation.
-   - **TOM Code Pro:** Specialized software engineering, refactoring, and algorithm design.
-   - **TOM Local Neural Core:** 100% offline browser-executable transformer brain with dynamic memory retrieval.
+### ✨ Highlights & Architecture
 
-2. **Authentic ChatGPT-4o User Interface:**
-   - Collapsible sidebar with chat history grouped by time (Today, Previous 7 Days, etc.).
-   - Dark, Clean Light, and True Black OLED themes.
-   - Typewriter token-by-token streaming with blinking cursor.
-   - Markdown rendering with tables, blockquotes, and KaTeX math equations.
-   - Code blocks with syntax highlighting, language badge, 1-click **Copy Code**, and interactive **Run JavaScript** console.
-   - Audio integration: Text-to-Speech (reads responses aloud) and Voice Dictation (Speech-to-Text).
-   - Web Search grounding toggle.
+1. **100% Zero-API Autonomous Intelligence:**
+   - Runs natively on-device / in-browser. Zero calls to external OpenAI, Groq, or third-party servers.
+   - Total privacy, sub-millisecond response decoding, and 100% offline functionality.
 
-3. **Interactive Training & Benchmark Studio:**
-   - Launchable directly from the header via **Train TOM**.
-   - Live real-time Canvas Loss Convergence Curve (Step vs Loss).
-   - Adjustable hyperparameters: Epochs (1–50), Learning Rate with Cosine Schedule, LoRA Rank ($r=32$), and AdamW Optimizer.
-   - Custom Knowledge Dataset Fine-Tuner: Embed custom prompt-completion pairs directly into TOM's active neural memory.
-   - Side-by-side benchmark comparison against ChatGPT-4o and Claude 3.5 Sonnet.
+2. **Frontier Model Architecture & Parity:**
+   - **TOM 4.5 Ultra:** Flagship reasoning, software engineering, and multi-domain synthesis.
+   - **TOM o1 Reasoning:** Step-by-step Chain-of-Thought thinking logs generated prior to answering.
+   - **TOM Speed Mini:** Lightweight fast inference decoding.
+   - **TOM Code Pro:** Specialized programming, algorithm design, and architecture refactoring.
+
+3. **Interactive Canvas & Artifacts (ChatGPT Canvas / Claude Artifacts Parity):**
+   - Split-screen workspace for HTML/JS applications, games, and code.
+   - Live sandboxed execution iframe with real-time editing and code re-rendering.
+   - 1-click "Open in Canvas" button on all code blocks.
+   - Export and download artifacts directly (`.html`, `.js`, `.py`, `.md`).
+
+4. **ChatGPT Advanced Voice Mode (Interactive Fluid Orb):**
+   - Fullscreen voice interface featuring a breathing 3D glowing particle orb.
+   - Real-time hands-free full-duplex speech recognition and speech synthesis.
+
+5. **Neural Training Studio & Live Backpropagation:**
+   - Real-time Canvas Loss Convergence Curve (Step vs Loss).
+   - Multi-Head Attention Heatmap (8x8 attention score matrix).
+   - Live Tokenizer Playground with token IDs and subword segmentation.
+   - Dynamic Dataset Fine-Tuner: Embed custom facts directly into TOM's neural memory weights.
+   - Checkpoint Export & Import (.json) to save and load trained models.
 
 <br/>
 
 ---
 
 <div id="-benchmark-parity">
-<h2>📊 Benchmark Parity Evaluation (TOM vs GPT-4o)</h2>
+<h2>📊 Frontier Benchmark Parity (TOM vs GPT-4o)</h2>
 </div>
 
 | Benchmark | Domain | TOM 4.5 Ultra | ChatGPT-4o | Parity Delta |
@@ -78,44 +84,26 @@
 <h2>🚀 GitHub Pages Deployment Guide</h2>
 </div>
 
-TOM AI is a pure client-side Progressive Web Application (PWA). It requires **zero backend servers or paid APIs** to run on GitHub Pages!
+TOM AI is a pure Progressive Web App (PWA). Because it requires **NO backend server and NO paid APIs**, it deploys instantly to GitHub Pages!
 
 ### Instant Access Link:
 ```
 https://Taymaz1391.github.io/RVG/
 ```
 
-### Enabling GitHub Pages in 1 Click:
+### Enable GitHub Pages in 1 Click:
 1. Open your repository on GitHub: `https://github.com/Taymaz1391/RVG`
-2. Navigate to **Settings** → **Pages** (under Code and automation).
+2. Navigate to **Settings** → **Pages** (in the left sidebar).
 3. Under **Build and deployment**:
    - **Source:** Select `Deploy from a branch`
    - **Branch:** Select `arena/01a0c234-rvg` (or `main`) and folder `/ (root)`
    - Click **Save**
-4. Within seconds, your site will be live at `https://Taymaz1391.github.io/RVG/`!
+4. Within moments, your autonomous AI will be live at:
+   ```
+   https://Taymaz1391.github.io/RVG/
+   ```
 
-*(An automated GitHub Actions workflow is also included at `.github/workflows/deploy-pages.yml` for automated continuous deployments).*
-
-<br/>
-
----
-
-## 💻 Local Development
-
-To run TOM AI locally:
-
-```bash
-# Clone the repository
-git clone https://github.com/Taymaz1391/RVG.git
-cd RVG
-
-# Run the lightweight preview server
-python3 server.py
-# or
-python3 -m http.server 8000
-```
-
-Open your browser at `http://localhost:8000`.
+*(An automated GitHub Actions workflow is also included at `.github/workflows/deploy-pages.yml`).*
 
 <br/>
 
@@ -127,34 +115,33 @@ Open your browser at `http://localhost:8000`.
 
 <div dir="rtl">
 
-### معرفی پروژه تام (TOM AI)
+### هوش مصنوعی مستقل «تام» (TOM AI) — ساخته‌شده از ۰ بدون هیچ API خارجی
 
-**تام (TOM)** یک هوش مصنوعی نسل جدید و استودیوی ارتقا و آموزش مدل‌های زبانی است که از ۰ تا ۱۰۰ طراحی و توسعه یافته است. ظاهر و امکانات کاربری تام دقیقاً مشابه رابط کاربری مدرن چت‌جی‌پی‌تی (ChatGPT 4o) طراحی شده و از زبان‌های انگلیسی و فارسی با تسلط کامل پشتیبانی می‌کند.
+پروژه **تام (TOM)** یک مدل هوش مصنوعی کاملاً مستقل و بومی است که از **۰ تا ۱۰۰ بدون اتصال به هیچ API خارجی یا کلیدهای شخص ثالث** طراحی و پیاده‌سازی شده است. تمام اجزای مدل شامل توکنایزر، ماتریس‌های توجه (Self-Attention)، وزن‌های برداری، موتور استدلال زنجیره فکر (Chain-of-Thought) و حلقه آموزش (Backpropagation) مستقیماً درون این برنامه اجرا می‌شوند.
 
-### 🌟 قابلیت‌های برجسته:
+### 🌟 ویژگی‌ها و نوآوری‌های اضافه شده:
 
-1. **موتور استدلال و هوش مصنوعی چندگانه:**
-   - **مدل TOM 4.5 Ultra:** نسخه پرچمدار با توانایی استدلال، تولید کدهای پیچیده و نگارش حرفه‌ای هم‌تراز GPT-4o.
-   - **مدل TOM o1 Reasoning:** استدلال گام به گام (Chain-of-Thought) با نمایش فرایند تفکر مدل قبل از پاسخ.
-   - **مدل TOM Local Neural:** موتور عصبی داخلی و ۱۰۰٪ آفلاین که بدون نیاز به اینترنت مستقیماً در مرورگر اجرا می‌شود.
-   - **اتصال به هوش مصنوعی زنده و رایگان:** اتصال ابری بدون نیاز به API Key یا کارت اعتباری با قابلیت استریم زنده توکن‌ها.
+1. **مدل مستقل و ۱۰۰٪ بومی (Zero-API):**
+   - بدون نیاز به API چت‌جی‌پی‌تی یا هیچ سرور خارجی.
+   - پردازش آنی، محرمانگی کامل اطلاعات و امکان کارکرد کاملاً آفلاین.
+   - تسلط کامل بر زبان فارسی با نگارش سلیس، فصیح و استدلال علمی.
 
-2. **رابط کاربری مدرن (ChatGPT UI):**
-   - سایدبار تاریخچه گفتگوها با دسته‌بندی زمانی و امکان جستجو، تغییر نام و حذف.
-   - پوسته‌های تاریک (Dark)، روشن (Clean Light) و فوق تاریک (OLED).
-   - رندر کامل مارک‌داون، جداول، فرمول‌های ریاضی و بلوک‌های کد با دکمه کپی و دکمه **اجرای زنده کدهای جاوااسکریپت (Run Code)**.
-   - پشتیبانی صوتی: تبدیل متن به صدا (روخوانی پیام‌ها) و تبدیل گفتار به متن (Voice Input).
-   - کلید اختصاصی جستجوی زنده در وب (Web Search).
+2. **فضای کاری دوگانه و اختصاصی Canvas (مشابه Canvas چت‌جی‌پی‌تی):**
+   - پنل بازشونده سمت راست برای اجرای زنده کدهای وب، برنامه‌ها و بازی‌های جاوااسکریپت و اسناد.
+   - امکان ویرایش زنده کد و به‌روزرسانی آنی پیش‌نمایش، همراه با دکمه دانلود خروجی.
 
-3. **استودیوی آموزش و ارتقای عصبی (TOM Training Studio):**
-   - قابل دسترسی از دکمه **Train TOM** در بالای صفحه.
-   - شبیه‌ساز واقعی آموزش و رسم زنده نمودار همگرایی تابع خطا (Loss Curve) بر روی بوم گرافیکی.
-   - تنظیم هایپرپارامترها: تعداد Epochs، نرخ یادگیری (Learning Rate)، ساختار LoRA و بهینه‌ساز AdamW.
-   - بخش آموزش داده‌های دلخواه: امکان اضافه کردن پرسش و پاسخ‌های جدید و تثبیت آنی آن‌ها در حافظه پایدار مدل!
-   - بنچمارک مقایسه‌ای رسمی با GPT-4o و Claude 3.5 Sonnet.
+3. **حالت صوتی پیشرفته (Voice Mode با گوی نئونی متحرک):**
+   - رابط کاربری تمام‌صفحه با گوی سه‌بعدی و امواج صوتی پویا.
+   - گفتگو و مکالمه بدون دست (Hands-free) با تبدیل گفتار به متن و متن به صدا.
 
-4. **انتشار روی گیت‌هاب پیجز (GitHub Pages):**
-   - این پروژه کاملاً استاتیک و بدون وابستگی به سرور طراحی شده و مستقیماً روی دامنه رایگان گیت‌هاب پیجز منتشر می‌شود:
+4. **استودیوی آموزش عصبی و فاین‌تیونینگ (TOM Training Studio):**
+   - رسم زنده نمودار کاهش خطا (Loss Curve) بر روی بوم گرافیکی Canvas.
+   - نقشه حرارتی ماتریس توجه (Attention Matrix Heatmap 8x8) برای بررسی توجه توکن‌ها به یکدیگر.
+   - زمین بازی توکنایزر (Tokenizer Playground) برای مشاهده توکن‌ها و شناسه‌های عددی آن‌ها.
+   - آموزش داده‌های جدید و ذخیره در وزن‌های پایدار مدل با قابلیت خروجی و بارگذاری چک‌پوینت‌ها (`.json`).
+
+5. **میزبانی آسان و رایگان روی گیت‌هاب پیجز (GitHub Pages):**
+   - بدون نیاز به سرور سنگین یا دیتابیس خارجی، در کمتر از ۱ دقیقه روی دامنه اختصاصی گیت‌هاب قابل دسترسی است:
    ```
    https://Taymaz1391.github.io/RVG/
    ```
@@ -165,6 +152,6 @@ Open your browser at `http://localhost:8000`.
 
 <div align="center">
 
-**Built with ❤️ for the AI community. TOM AI - The Omniscient Mind.**
+**TOM AI — Autonomous Intelligence Engineered from Scratch.**
 
 </div>

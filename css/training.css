@@ -418,6 +418,55 @@
   font-weight: 600;
 }
 
+/* Attention Heatmap & Tokenizer Inspector */
+.attention-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 3px;
+  max-width: 320px;
+  margin: 10px 0;
+}
+
+.attention-cell {
+  aspect-ratio: 1 / 1;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.attention-cell:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
+  z-index: 2;
+}
+
+.tokenizer-tokens-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px;
+  background: #09090b;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 48px;
+}
+
+.token-pill {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.token-pill .token-id {
+  font-size: 10px;
+  opacity: 0.6;
+}
+
 @media (max-width: 900px) {
   .training-grid {
     grid-template-columns: 1fr;

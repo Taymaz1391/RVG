@@ -13,17 +13,15 @@ const STORAGE_KEYS = {
 
 const DEFAULT_SETTINGS = {
   theme: 'dark', // 'dark', 'light', 'oled'
-  model: 'tom-4.5-ultra', // 'tom-4.5-ultra', 'tom-o1-reasoning', 'tom-speed-mini', 'tom-code-pro', 'tom-neural-local'
-  provider: 'pollinations', // 'pollinations' (free cloud), 'custom-openai', 'custom-groq', 'custom-openrouter', 'local-neural'
-  apiKey: '',
-  apiEndpoint: '',
+  model: 'tom-4.5-ultra', // 'tom-4.5-ultra', 'tom-o1-reasoning', 'tom-speed-mini', 'tom-code-pro'
+  engine: 'autonomous-neural-core', // 100% self-contained native AI model
   temperature: 0.7,
   topP: 0.95,
   maxTokens: 4096,
-  systemPrompt: 'You are TOM, an advanced, highly intelligent, and versatile AI assistant created from scratch. You rival and surpass ChatGPT-4o in reasoning, deep coding, factual accuracy, creative depth, and multilingual nuance (fluent in both English and Persian). Respond with clarity, elegance, step-by-step thinking when complex, and pristine Markdown formatting.',
+  systemPrompt: 'You are TOM, an advanced, highly intelligent, and versatile autonomous AI model created from scratch. You rival ChatGPT-4o in reasoning, deep coding, factual accuracy, creative depth, and multilingual nuance (fluent in both English and Persian). Respond with clarity, elegance, step-by-step thinking when complex, and pristine Markdown formatting.',
   enableWebSearch: false,
   enableTTS: true,
-  streamSpeed: 'normal', // 'fast', 'normal', 'slow'
+  streamSpeed: 'normal',
   userAvatarName: 'You'
 };
 
