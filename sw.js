@@ -1,9 +1,11 @@
 // Service Worker for 100% Offline TOM AI PWA
-const CACHE_NAME = 'tom-ai-v2';
+const CACHE_NAME = 'tom-ai-v3';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './manifest.json',
+  './.nojekyll',
+  './404.html',
   './assets/logo.svg',
   './css/chatgpt-theme.css',
   './css/components.css',
@@ -13,6 +15,9 @@ const ASSETS_TO_CACHE = [
   './css/voice-mode.css',
   './js/storage.js',
   './js/markdown-renderer.js',
+  './js/charts-engine.js',
+  './js/audio-effects.js',
+  './js/personas.js',
   './js/speech.js',
   './js/tom-neural-core.js',
   './js/ai-engine.js',

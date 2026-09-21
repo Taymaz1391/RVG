@@ -84,10 +84,29 @@ class TomApp {
     this.settingsModal = document.getElementById('settingsModal');
     this.trainingModal = document.getElementById('trainingModal');
     this.exportModal = document.getElementById('exportModal');
+    this.githubPagesModal = document.getElementById('githubPagesModal');
     this.toastContainer = document.getElementById('toastContainer');
   }
 
   bindEvents() {
+    // GitHub Pages modal
+    document.getElementById('btnOpenGitHubPagesModal')?.addEventListener('click', () => {
+      this.githubPagesModal?.classList.add('active');
+    });
+    document.getElementById('btnCloseGitHubPagesModal')?.addEventListener('click', () => {
+      this.githubPagesModal?.classList.remove('active');
+    });
+
+    // Subsystem initializations
+    if (window.PersonasManager) {
+      this.personasManager = new PersonasManager();
+      this.personasManager.init();
+      window.personasManager = this.personasManager;
+    }
+    if (window.AudioEffects) {
+      this.audio = new AudioEffects();
+      window.audioEffects = this.audio;
+    }
     // Sidebar toggle
     this.btnSidebarToggle?.addEventListener('click', () => {
       this.sidebar.classList.toggle('open');
@@ -519,6 +538,7 @@ class TomApp {
     this.welcomeHero.style.display = 'none';
 
     // 1. User Message
+    this.audio?.playSend();
     let fullUserContent = text;
     if (this.attachments.length > 0) {
       const attachSummary = this.attachments.map(a => `[Attached File: ${a.name} (${a.type})]\n${a.content || ''}`).join('\n\n');
@@ -604,6 +624,8 @@ class TomApp {
         this.scrollToBottom();
       }
 
+      // Finish streaming
+      this.audio?.playDone();
       contentTarget.innerHTML = MarkdownRenderer.render(accumulatedContent);
 
       const assistantMsg = {
@@ -857,6 +879,8 @@ class TomApp {
     this.closeSettingsModal();
     this.closeTrainingModal();
     this.closeExportModal();
+    this.githubPagesModal?.classList.remove('active');
+    document.getElementById('personasModal')?.classList.remove('active');
     this.canvasArtifacts?.close();
     this.voiceMode?.close();
   }
