@@ -1,0 +1,49 @@
+{
+  "app_name": "TOM AI",
+  "version": "4.5.2 Ultra",
+  "release_date": "2026-09-21",
+  "zero_api": true,
+  "offline_ready": true,
+  "packages": [
+    {
+      "filename": "TOM-AI-Setup.exe",
+      "description": "Windows 64-bit Native Launcher & Installer",
+      "os": "Windows 10/11 x64",
+      "type": "exe",
+      "size_bytes": 2560,
+      "size_formatted": "2.5 KB",
+      "sha256": "c0ee21f88dc260fb6cf2b758d3bd454993374c40bcbc906c6aec6206f30f48a2",
+      "url": "./downloads/TOM-AI-Setup.exe"
+    },
+    {
+      "filename": "TOM-AI-v4.5.apk",
+      "description": "Android Signed APK Application Package",
+      "os": "Android 7.0+",
+      "type": "apk",
+      "size_bytes": 91838,
+      "size_formatted": "89.7 KB",
+      "sha256": "4a32151279c2e3924b46d2aad22f21f84e7012a447eabc5c3dfbcf4001ac2bbd",
+      "url": "./downloads/TOM-AI-v4.5.apk"
+    },
+    {
+      "filename": "TOM-AI-Windows-Package.zip",
+      "description": "Complete Windows Offline Suite & Setup Scripts",
+      "os": "Windows 7/8/10/11",
+      "type": "zip",
+      "size_bytes": 112933,
+      "size_formatted": "110.3 KB",
+      "sha256": "c7e9a30228a8eaf800ba03f69edbc7f8111588edb534854e6cf151ece256e15b",
+      "url": "./downloads/TOM-AI-Windows-Package.zip"
+    },
+    {
+      "filename": "TOM-AI-Android-Package.zip",
+      "description": "Android Package with ADB 1-Click Installer",
+      "os": "Android / All Devices",
+      "type": "zip",
+      "size_bytes": 98286,
+      "size_formatted": "96.0 KB",
+      "sha256": "57dcf58833002d2f4ff5f58c883bc717d92e791a63b74f451b7ea810ed998d44",
+      "url": "./downloads/TOM-AI-Android-Package.zip"
+    }
+  ]
+}

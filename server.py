@@ -25,7 +25,7 @@ class TOMHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         super().end_headers()
 
     def guess_type(self, path):
-        # Ensure correct MIME types for modern ES modules and SVG
+        # Ensure correct MIME types for modern ES modules, SVG, and installers
         if path.endswith(".js"):
             return "application/javascript"
         elif path.endswith(".css"):
@@ -36,6 +36,12 @@ class TOMHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
             return "application/json"
         elif path.endswith(".webmanifest") or path.endswith(".manifest"):
             return "application/manifest+json"
+        elif path.endswith(".apk"):
+            return "application/vnd.android.package-archive"
+        elif path.endswith(".exe"):
+            return "application/x-msdownload"
+        elif path.endswith(".zip"):
+            return "application/zip"
         return super().guess_type(path)
 
     def log_message(self, format, *args):

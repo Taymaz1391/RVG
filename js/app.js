@@ -85,12 +85,25 @@ class TomApp {
     this.trainingModal = document.getElementById('trainingModal');
     this.exportModal = document.getElementById('exportModal');
     this.githubPagesModal = document.getElementById('githubPagesModal');
+    this.downloadsModal = document.getElementById('downloadsModal');
     this.toastContainer = document.getElementById('toastContainer');
   }
 
   bindEvents() {
+    // Download Center modal
+    const openDownloads = () => {
+      this.closeAllModals();
+      this.downloadsModal?.classList.add('active');
+    };
+    document.getElementById('btnHeaderDownload')?.addEventListener('click', openDownloads);
+    document.getElementById('btnOpenDownloadsModal')?.addEventListener('click', openDownloads);
+    document.getElementById('btnCloseDownloadsModal')?.addEventListener('click', () => {
+      this.downloadsModal?.classList.remove('active');
+    });
+
     // GitHub Pages modal
     document.getElementById('btnOpenGitHubPagesModal')?.addEventListener('click', () => {
+      this.closeAllModals();
       this.githubPagesModal?.classList.add('active');
     });
     document.getElementById('btnCloseGitHubPagesModal')?.addEventListener('click', () => {
@@ -880,9 +893,25 @@ class TomApp {
     this.closeTrainingModal();
     this.closeExportModal();
     this.githubPagesModal?.classList.remove('active');
+    this.downloadsModal?.classList.remove('active');
     document.getElementById('personasModal')?.classList.remove('active');
     this.canvasArtifacts?.close();
     this.voiceMode?.close();
+  }
+
+  switchDownloadTab(tab) {
+    const tabs = ['android', 'windows', 'hashes'];
+    tabs.forEach(t => {
+      const btn = document.getElementById('tabBtn' + t.charAt(0).toUpperCase() + t.slice(1));
+      const panel = document.getElementById('panel' + t.charAt(0).toUpperCase() + t.slice(1));
+      if (t === tab) {
+        btn?.classList.add('active');
+        panel?.classList.add('active');
+      } else {
+        btn?.classList.remove('active');
+        panel?.classList.remove('active');
+      }
+    });
   }
 
   showToast(message, duration = 3000) {

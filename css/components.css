@@ -1136,3 +1136,230 @@ input:checked + .slider:before {
     max-width: 92%;
   }
 }
+
+/* Download Center Modal Styles */
+.download-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+
+.download-tab-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-fast);
+}
+
+.download-tab-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.download-tab-btn.active {
+  background: rgba(16, 163, 127, 0.15);
+  border-color: var(--accent-primary);
+  color: #34d399;
+  font-weight: 600;
+}
+
+.download-panel {
+  display: none;
+  animation: fadeIn 0.2s ease;
+}
+
+.download-panel.active {
+  display: block;
+}
+
+.download-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.download-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.download-card-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.platform-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+.platform-badge-icon.android {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+}
+
+.platform-badge-icon.windows {
+  background: rgba(14, 165, 233, 0.15);
+  border-color: rgba(14, 165, 233, 0.3);
+  color: #38bdf8;
+}
+
+.download-meta-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.meta-pill {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: var(--bg-hover);
+  color: var(--text-secondary);
+}
+
+.meta-pill.accent {
+  background: rgba(16, 163, 127, 0.2);
+  color: #34d399;
+  font-weight: 600;
+}
+
+.download-actions-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.btn-download-main {
+  background: var(--accent-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 10px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.btn-download-main:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-download-sub {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.btn-download-sub:hover {
+  background: var(--bg-hover);
+  border-color: var(--text-muted);
+}
+
+.install-guide-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  font-size: 12.5px;
+}
+
+.install-guide-step {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+  align-items: flex-start;
+}
+
+.install-guide-step:last-child {
+  margin-bottom: 0;
+}
+
+.step-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(16, 163, 127, 0.2);
+  color: #34d399;
+  font-weight: 700;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hash-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.hash-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.hash-table th, .hash-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.hash-table th {
+  background: var(--bg-surface-elevated);
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.hash-code {
+  font-family: monospace;
+  font-size: 11px;
+  color: #38bdf8;
+  word-break: break-all;
+}
+

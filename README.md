@@ -7,12 +7,15 @@
 *Built completely from scratch (0 to 100) — ZERO external APIs, ZERO third-party keys.*
 
 [![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-22c55e?style=for-the-badge&logo=github)](https://Taymaz1391.github.io/RVG/)
+[![Android APK](https://img.shields.io/badge/Android_APK-v4.5.2_Download-3DDC84?style=for-the-badge&logo=android&logoColor=white)](./downloads/TOM-AI-v4.5.apk)
+[![Windows EXE](https://img.shields.io/badge/Windows_EXE-Setup_Download-0078D6?style=for-the-badge&logo=windows&logoColor=white)](./downloads/TOM-AI-Setup.exe)
 [![Architecture](https://img.shields.io/badge/Architecture-Autonomous_Neural_Transformer-10a37f?style=for-the-badge)](https://Taymaz1391.github.io/RVG/)
 [![API Status](https://img.shields.io/badge/Zero_API-100%25_Self_Contained-0284c7?style=for-the-badge)](https://Taymaz1391.github.io/RVG/)
 [![UI Style](https://img.shields.io/badge/UI-ChatGPT_4o_Design-38bdf8?style=for-the-badge)](https://Taymaz1391.github.io/RVG/)
 
 <br/>
 
+<a href="#-download-installers">📦 Download Installers (APK & EXE)</a> • 
 <a href="#-english">🇬🇧 English Overview</a> • 
 <a href="#-فارسی">🇮🇷 راهنمای فارسی</a> • 
 <a href="#-github-pages-deployment">🚀 GitHub Pages Deployment</a> • 
@@ -21,6 +24,42 @@
 </div>
 
 <br/>
+
+---
+
+<div id="-download-installers">
+<h2>📦 Download Installers (Android APK & Windows EXE)</h2>
+</div>
+
+TOM AI is distributed as standalone native installation packages that can run **100% on-device without internet access or external APIs**:
+
+| Platform | Package File | Type | Target OS | Direct Download |
+| :--- | :--- | :---: | :--- | :---: |
+| **Android** | `TOM-AI-v4.5.apk` | Signed APK | Android 7.0+ | [📥 Download APK](./downloads/TOM-AI-v4.5.apk) |
+| **Android (Suite)** | `TOM-AI-Android-Package.zip` | Full Bundle + ADB | Android / All | [📦 Download ZIP](./downloads/TOM-AI-Android-Package.zip) |
+| **Windows** | `TOM-AI-Setup.exe` | 64-bit Native PE | Windows 10/11 x64 | [📥 Download EXE](./downloads/TOM-AI-Setup.exe) |
+| **Windows (Suite)** | `TOM-AI-Windows-Package.zip` | Offline Suite + Scripts | Windows 7/8/10/11 | [📦 Download ZIP](./downloads/TOM-AI-Windows-Package.zip) |
+
+#### 📱 Android Installation Instructions:
+1. Tap **[Download APK](./downloads/TOM-AI-v4.5.apk)** to download the installation package directly to your Android device.
+2. Open the downloaded file from your browser notification or file manager.
+3. If requested, tap **Settings** and toggle **"Allow installation from unknown sources"**.
+4. Tap **Install** and launch TOM AI directly from your app drawer!
+*Developer ADB install:* `adb install -r TOM-AI-v4.5.apk`
+
+#### 💻 Windows Installation Instructions:
+1. Tap **[Download EXE](./downloads/TOM-AI-Setup.exe)** to download the native Windows 64-bit launcher.
+2. Double-click `TOM-AI-Setup.exe` to run TOM AI immediately.
+3. To install desktop and Start Menu shortcuts, download **[TOM-AI-Windows-Package.zip](./downloads/TOM-AI-Windows-Package.zip)**, extract it, and run `Install-TOM-AI.bat`.
+4. To run **100% offline with zero internet access**, run `Start-Offline-Server.bat` inside the ZIP.
+
+#### 🔒 Cryptographic Checksums (SHA-256):
+```
+c0ee21f88dc260fb6cf2b758d3bd454993374c40bcbc906c6aec6206f30f48a2  TOM-AI-Setup.exe
+1cac3a9ae8078e49e165805bb43f6ee15e0d07a3101a0df0777082b081ae02db  TOM-AI-v4.5.apk
+d324212caa8c890f266863ee54c3ccc273821b230bb1baff810752832908f18a  TOM-AI-Windows-Package.zip
+10c59d7f967b6993aa4cb02de3f40df80f85312cd48b9d7d4687b6c3840fe65d  TOM-AI-Android-Package.zip
+```
 
 ---
 
@@ -118,6 +157,25 @@ https://Taymaz1391.github.io/RVG/
 ### هوش مصنوعی مستقل «تام» (TOM AI) — ساخته‌شده از ۰ بدون هیچ API خارجی
 
 پروژه **تام (TOM)** یک مدل هوش مصنوعی کاملاً مستقل و بومی است که از **۰ تا ۱۰۰ بدون اتصال به هیچ API خارجی یا کلیدهای شخص ثالث** طراحی و پیاده‌سازی شده است. تمام اجزای مدل شامل توکنایزر، ماتریس‌های توجه (Self-Attention)، وزن‌های برداری، موتور استدلال زنجیره فکر (Chain-of-Thought) و حلقه آموزش (Backpropagation) مستقیماً درون این برنامه اجرا می‌شوند.
+
+### 📦 دانلود مستقیم فایل‌های نصبی (APK و EXE):
+
+| پلتفرم | فایل دانلودی | نوع فایل | حجم فایل | لینک دانلود |
+| :--- | :--- | :---: | :---: | :---: |
+| **اندروید (Android)** | `TOM-AI-v4.5.apk` | فایل نصبی APK رسمی (امضاشده) | حدود ۸۶ کیلوبایت | [📥 دانلود مستقیم APK](./downloads/TOM-AI-v4.5.apk) |
+| **اندروید (بسته کامل)** | `TOM-AI-Android-Package.zip` | بسته کامل با ابزار نصب ADB | حدود ۹۳ کیلوبایت | [📦 دانلود پکیج ZIP](./downloads/TOM-AI-Android-Package.zip) |
+| **ویندوز (Windows)** | `TOM-AI-Setup.exe` | لانچر نصبی بومی ۶۴ بیتی | حدود ۲.۵ کیلوبایت | [📥 دانلود مستقیم EXE](./downloads/TOM-AI-Setup.exe) |
+| **ویندوز (بسته آفلاین)** | `TOM-AI-Windows-Package.zip` | پکیج کامل آفلاین + اسکریپت میانبر | حدود ۱۰۷ کیلوبایت | [📦 دانلود پکیج آفلاین ZIP](./downloads/TOM-AI-Windows-Package.zip) |
+
+#### 📱 راهنمای نصب در اندروید:
+۱. روی دکمه **[دانلود مستقیم APK](./downloads/TOM-AI-v4.5.apk)** کلیک کرده یا در گوشی اندروید دانلود کنید.
+۲. فایل دانلودشده را باز کرده و در صورت نیاز گزینه «مجاز بودن نصب از منابع ناشناخته» (Allow unknown sources) را در تنظیمات فعال کنید.
+۳. دکمه **نصب (Install)** را لمس کنید تا برنامه با آیکون اختصاصی به صفحه برنامه‌های گوشی شما اضافه شود.
+
+#### 💻 راهنمای اجرا و نصب در ویندوز:
+۱. فایل **[TOM-AI-Setup.exe](./downloads/TOM-AI-Setup.exe)** را دانلود کرده و اجرا کنید.
+۲. جهت ساخت خودکار میانبر روی دسکتاپ و استارت‌منو، پکیج **[TOM-AI-Windows-Package.zip](./downloads/TOM-AI-Windows-Package.zip)** را استخراج کرده و فایل `Install-TOM-AI.bat` را اجرا نمایید.
+۳. برای کارکرد **۱۰۰٪ آفلاین و بدون نیاز به هیچ اینترنتی**، فایل `Start-Offline-Server.bat` درون بسته را اجرا کنید.
 
 ### 🌟 ویژگی‌ها و نوآوری‌های اضافه شده:
 

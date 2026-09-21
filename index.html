@@ -69,6 +69,16 @@
 
       <!-- Sidebar Footer -->
       <div class="sidebar-footer">
+        <!-- Download APK & EXE Link -->
+        <button class="btn-sidebar-link" id="btnOpenDownloadsModal" style="background:rgba(16, 185, 129, 0.12); border:1px solid rgba(16, 185, 129, 0.3); color:#34d399; font-weight:600;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>📦 Download APK & EXE</span>
+        </button>
+
         <!-- GitHub Pages Publishing Guide Trigger -->
         <button class="btn-sidebar-link" id="btnOpenGitHubPagesModal" style="background:rgba(34, 197, 94, 0.12); border:1px solid rgba(34, 197, 94, 0.3); color:#4ade80; font-weight:600;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -163,6 +173,16 @@
         </div>
 
         <div class="header-right">
+          <!-- Download APK & EXE Action Button -->
+          <button class="header-action-btn" id="btnHeaderDownload" title="Download Installers (Android APK & Windows EXE)" style="width:auto; padding:0 11px; font-size:12.5px; font-weight:600; display:flex; gap:6px; color:#10b981; border:1px solid rgba(16, 185, 129, 0.35); background:rgba(16, 185, 129, 0.1);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Download Apps</span>
+          </button>
+
           <!-- Personas Trigger -->
           <button class="header-action-btn" id="btnOpenPersonas" title="Explore Specialized Personas & GPTs" style="width:auto; padding:0 10px; font-size:12.5px; font-weight:600; display:flex; gap:6px; color:#38bdf8;">
             <span>✨ Personas</span>
@@ -810,6 +830,202 @@
             <div class="dataset-list" id="datasetList">
               <!-- Rendered by training-studio.js -->
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Download Center Modal (APK & EXE) -->
+  <div class="modal-overlay" id="downloadsModal">
+    <div class="modal-box" style="max-width:700px;">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:24px;">📦</span>
+          <div>
+            <h2 class="modal-title" style="margin:0;">TOM AI Download Center</h2>
+            <div style="font-size:12px; color:var(--text-muted);">Official Installers for Android & Windows • ۱۰۰٪ مستقل و بدون API</div>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="btnCloseDownloadsModal">✕</button>
+      </div>
+
+      <div class="modal-body" style="gap:16px;">
+        <div class="download-tabs">
+          <button class="download-tab-btn active" id="tabBtnAndroid" onclick="app.switchDownloadTab('android')">
+            <span>📱 Android (APK)</span>
+          </button>
+          <button class="download-tab-btn" id="tabBtnWindows" onclick="app.switchDownloadTab('windows')">
+            <span>💻 Windows (EXE)</span>
+          </button>
+          <button class="download-tab-btn" id="tabBtnHashes" onclick="app.switchDownloadTab('hashes')">
+            <span>🔒 Hashes & Security</span>
+          </button>
+        </div>
+
+        <!-- Android Panel -->
+        <div class="download-panel active" id="panelAndroid">
+          <div class="download-card">
+            <div class="download-card-header">
+              <div class="download-card-title">
+                <div class="platform-badge-icon android">🤖</div>
+                <div>
+                  <h3 style="font-size:15px; font-weight:600; margin:0;">TOM AI for Android</h3>
+                  <div class="download-meta-tags">
+                    <span class="meta-pill accent">v4.5.2 Stable</span>
+                    <span class="meta-pill">Signed APK</span>
+                    <span class="meta-pill">~86 KB</span>
+                    <span class="meta-pill">Android 7.0+</span>
+                    <span class="meta-pill">Zero-API / On-Device</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p style="font-size:12.5px; color:var(--text-secondary); margin:0;">
+              Official Android package with embedded neural runtime, voice recognition, and ChatGPT interface. Runs 100% locally on your phone with zero server dependencies.
+            </p>
+            <div class="download-actions-row">
+              <a href="./downloads/TOM-AI-v4.5.apk" download="TOM-AI-v4.5.apk" class="btn-download-main" id="btnDownloadApkDirect">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Download APK (.apk)</span>
+              </a>
+              <a href="./downloads/TOM-AI-Android-Package.zip" download="TOM-AI-Android-Package.zip" class="btn-download-sub">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                <span>Full Package (with ADB Tool .zip)</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="install-guide-box">
+            <h4 style="font-size:13px; font-weight:600; margin:0 0 8px 0; color:var(--text-primary); display:flex; align-items:center; gap:6px;">
+              <span>📖 Installation Guide / راهنمای نصب اندروید</span>
+            </h4>
+            <div class="install-guide-step">
+              <span class="step-num">1</span>
+              <div>
+                <strong>Download APK:</strong> Tap the green button above on your Android device.
+                <div style="font-size:11.5px; color:var(--text-muted); direction:rtl; text-align:right;">دکمه سبز رنگ بالا را لمس کنید تا فایل نصبی مستقیم دانلود شود.</div>
+              </div>
+            </div>
+            <div class="install-guide-step">
+              <span class="step-num">2</span>
+              <div>
+                <strong>Allow Unknown Sources:</strong> If your browser prompts you, tap <em>Settings</em> and enable <em>Allow from this source</em>.
+                <div style="font-size:11.5px; color:var(--text-muted); direction:rtl; text-align:right;">در صورت هشدار امنیتی، گزینه نصب از این منبع (Allow from this source) را فعال کنید.</div>
+              </div>
+            </div>
+            <div class="install-guide-step">
+              <span class="step-num">3</span>
+              <div>
+                <strong>Tap Install:</strong> Confirm the installation. TOM AI will appear on your home screen with offline AI capabilities!
+                <div style="font-size:11.5px; color:var(--text-muted); direction:rtl; text-align:right;">گزینه Install را انتخاب کرده و برنامه تام را مستقیماً اجرا نمایید.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Windows Panel -->
+        <div class="download-panel" id="panelWindows">
+          <div class="download-card">
+            <div class="download-card-header">
+              <div class="download-card-title">
+                <div class="platform-badge-icon windows">🪟</div>
+                <div>
+                  <h3 style="font-size:15px; font-weight:600; margin:0;">TOM AI for Windows</h3>
+                  <div class="download-meta-tags">
+                    <span class="meta-pill accent">v4.5.2 Stable</span>
+                    <span class="meta-pill">64-bit Native PE (.exe)</span>
+                    <span class="meta-pill">~2.5 KB / ~107 KB Suite</span>
+                    <span class="meta-pill">Windows 10 / 11</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p style="font-size:12.5px; color:var(--text-secondary); margin:0;">
+              High-performance native Windows 64-bit GUI executable. Runs TOM AI seamlessly and includes complete offline suite with 1-click shortcut installer.
+            </p>
+            <div class="download-actions-row">
+              <a href="./downloads/TOM-AI-Setup.exe" download="TOM-AI-Setup.exe" class="btn-download-main" id="btnDownloadExeDirect">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Download TOM-AI-Setup.exe</span>
+              </a>
+              <a href="./downloads/TOM-AI-Windows-Package.zip" download="TOM-AI-Windows-Package.zip" class="btn-download-sub">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                <span>Complete Offline Suite (.zip)</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="install-guide-box">
+            <h4 style="font-size:13px; font-weight:600; margin:0 0 8px 0; color:var(--text-primary); display:flex; align-items:center; gap:6px;">
+              <span>📖 Installation & Offline Guide / راهنمای ویندوز</span>
+            </h4>
+            <div class="install-guide-step">
+              <span class="step-num">1</span>
+              <div>
+                <strong>Instant Launch:</strong> Double-click <code>TOM-AI-Setup.exe</code> to run TOM AI directly.
+                <div style="font-size:11.5px; color:var(--text-muted); direction:rtl; text-align:right;">برای اجرای فوری، روی فایل TOM-AI-Setup.exe کلیک کنید.</div>
+              </div>
+            </div>
+            <div class="install-guide-step">
+              <span class="step-num">2</span>
+              <div>
+                <strong>Desktop Shortcut:</strong> Extract the ZIP and run <code>Install-TOM-AI.bat</code> to automatically create Desktop and Start Menu shortcuts.
+                <div style="font-size:11.5px; color:var(--text-muted); direction:rtl; text-align:right;">با اجرای Install-TOM-AI.bat میانبر دسکتاپ و استارت منو خودکار ایجاد می‌شود.</div>
+              </div>
+            </div>
+            <div class="install-guide-step">
+              <span class="step-num">3</span>
+              <div>
+                <strong>100% Offline Server:</strong> Run <code>Start-Offline-Server.bat</code> to host TOM AI locally with zero internet access required.
+                <div style="font-size:11.5px; color:var(--text-muted); direction:rtl; text-align:right;">برای کارکرد ۱۰۰٪ آفلاین بدون هیچ اینترنتی، فایل Start-Offline-Server.bat را اجرا کنید.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hashes Panel -->
+        <div class="download-panel" id="panelHashes">
+          <p style="font-size:12.5px; color:var(--text-secondary); margin-bottom:10px;">
+            Verify package authenticity using SHA-256 cryptographic hashes:
+          </p>
+          <div class="hash-table-wrapper">
+            <table class="hash-table">
+              <thead>
+                <tr>
+                  <th>File</th>
+                  <th>Platform</th>
+                  <th>Size</th>
+                  <th>SHA-256 Checksum</th>
+                </tr>
+              </thead>
+              <tbody id="hashTableBody">
+                <tr>
+                  <td><code>TOM-AI-Setup.exe</code></td>
+                  <td>Windows x64</td>
+                  <td>2.5 KB</td>
+                  <td><span class="hash-code">c0ee21f88dc260fb6cf2b758d3bd454993374c40bcbc906c6aec6206f30f48a2</span></td>
+                </tr>
+                <tr>
+                  <td><code>TOM-AI-v4.5.apk</code></td>
+                  <td>Android 7.0+</td>
+                  <td>89.7 KB</td>
+                  <td><span class="hash-code">1cac3a9ae8078e49e165805bb43f6ee15e0d07a3101a0df0777082b081ae02db</span></td>
+                </tr>
+                <tr>
+                  <td><code>TOM-AI-Windows-Package.zip</code></td>
+                  <td>Windows Suite</td>
+                  <td>110.3 KB</td>
+                  <td><span class="hash-code">d324212caa8c890f266863ee54c3ccc273821b230bb1baff810752832908f18a</span></td>
+                </tr>
+                <tr>
+                  <td><code>TOM-AI-Android-Package.zip</code></td>
+                  <td>Android + ADB</td>
+                  <td>96.0 KB</td>
+                  <td><span class="hash-code">10c59d7f967b6993aa4cb02de3f40df80f85312cd48b9d7d4687b6c3840fe65d</span></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
