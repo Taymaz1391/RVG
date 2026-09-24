@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/logo.svg" width="120" height="120" alt="TOM AI Logo" />
+<img src="./assets/branding/tom-official-logo.png" width="220" style="border-radius:24px; box-shadow:0 12px 36px rgba(16,185,129,0.25);" alt="TOM AI Official Brand Logo" />
 
 # 🧠 TOM AI (v4.5 Ultra)
 ### 100% Autonomous Neural Artificial Intelligence & Training Studio
@@ -16,6 +16,7 @@
 <br/>
 
 <a href="#-download-installers">📦 Download Installers (APK & EXE)</a> • 
+<a href="#-commercial-video">🎬 Commercial Video & Brand Ads</a> • 
 <a href="#-english">🇬🇧 English Overview</a> • 
 <a href="#-فارسی">🇮🇷 راهنمای فارسی</a> • 
 <a href="#-github-pages-deployment">🚀 GitHub Pages Deployment</a> • 
@@ -39,6 +40,7 @@ TOM AI is distributed as standalone native installation packages that can run **
 | **Android (Suite)** | `TOM-AI-Android-Package.zip` | Full Bundle + ADB | Android / All | [📦 Download ZIP](./downloads/TOM-AI-Android-Package.zip) |
 | **Windows** | `TOM-AI-Setup.exe` | 64-bit Native PE | Windows 10/11 x64 | [📥 Download EXE](./downloads/TOM-AI-Setup.exe) |
 | **Windows (Suite)** | `TOM-AI-Windows-Package.zip` | Offline Suite + Scripts | Windows 7/8/10/11 | [📦 Download ZIP](./downloads/TOM-AI-Windows-Package.zip) |
+| **Commercial Video** | `TOM-AI-Commercial-Ad.mp4` | 720p HD Promo Teaser | All Devices | [🎬 Download MP4](./downloads/TOM-AI-Commercial-Ad.mp4) |
 
 #### 📱 Android Installation Instructions:
 1. Tap **[Download APK](./downloads/TOM-AI-v4.5.apk)** to download the installation package directly to your Android device.
@@ -56,10 +58,28 @@ TOM AI is distributed as standalone native installation packages that can run **
 #### 🔒 Cryptographic Checksums (SHA-256):
 ```
 c0ee21f88dc260fb6cf2b758d3bd454993374c40bcbc906c6aec6206f30f48a2  TOM-AI-Setup.exe
-1cac3a9ae8078e49e165805bb43f6ee15e0d07a3101a0df0777082b081ae02db  TOM-AI-v4.5.apk
-d324212caa8c890f266863ee54c3ccc273821b230bb1baff810752832908f18a  TOM-AI-Windows-Package.zip
-10c59d7f967b6993aa4cb02de3f40df80f85312cd48b9d7d4687b6c3840fe65d  TOM-AI-Android-Package.zip
+1596fb8b8ffdda0ed2301d57989703021b284b95df358f3d3e50d2ef8c2abaf2  TOM-AI-v4.5.apk
+93df735b6a4064775dae7a5ac851d296c153b6cd3503ea3e1a7e7cfd497ef015  TOM-AI-Windows-Package.zip
+54b4b4603c87a7bf5361ef5d92cf724ed1a9b32ceab0d7bf838f42f74606dc7a  TOM-AI-Android-Package.zip
+9a304d3b1369607d07101494325af55fae814417f238cf163dd499a2053bfcb5  TOM-AI-Commercial-Ad.mp4
 ```
+
+---
+
+<div id="-commercial-video">
+<h2>🎬 Commercial Video & Brand Advertising Kit</h2>
+</div>
+
+An official high-definition promotional advertisement video and complete brand media kit have been generated for TOM AI:
+
+- 🎥 **Official Commercial Video (720p HD MP4):** [assets/tom-brand-commercial.mp4](./assets/tom-brand-commercial.mp4) • [Download MP4](./downloads/TOM-AI-Commercial-Ad.mp4)
+- 🖼️ **Social Media Banner (1200x630):** [assets/branding/tom-social-banner.png](./assets/branding/tom-social-banner.png)
+- 📱 **Mobile App Store Poster (1080x1920):** [assets/branding/tom-app-store-poster.png](./assets/branding/tom-app-store-poster.png)
+- 📖 **Brand Guidelines Document:** [assets/branding/tom-brand-guidelines.md](./assets/branding/tom-brand-guidelines.md)
+
+<div align="center">
+  <img src="./assets/branding/tom-social-banner.png" width="90%" style="border-radius:12px; margin: 15px 0;" alt="TOM AI Brand Banner" />
+</div>
 
 ---
 
@@ -162,10 +182,11 @@ https://Taymaz1391.github.io/RVG/
 
 | پلتفرم | فایل دانلودی | نوع فایل | حجم فایل | لینک دانلود |
 | :--- | :--- | :---: | :---: | :---: |
-| **اندروید (Android)** | `TOM-AI-v4.5.apk` | فایل نصبی APK رسمی (امضاشده) | حدود ۸۶ کیلوبایت | [📥 دانلود مستقیم APK](./downloads/TOM-AI-v4.5.apk) |
-| **اندروید (بسته کامل)** | `TOM-AI-Android-Package.zip` | بسته کامل با ابزار نصب ADB | حدود ۹۳ کیلوبایت | [📦 دانلود پکیج ZIP](./downloads/TOM-AI-Android-Package.zip) |
+| **اندروید (Android)** | `TOM-AI-v4.5.apk` | فایل نصبی APK رسمی (امضاشده) | حدود ۶۱۰ کیلوبایت | [📥 دانلود مستقیم APK](./downloads/TOM-AI-v4.5.apk) |
+| **اندروید (بسته کامل)** | `TOM-AI-Android-Package.zip` | بسته کامل با ابزار نصب ADB | حدود ۱ مگابایت | [📦 دانلود پکیج ZIP](./downloads/TOM-AI-Android-Package.zip) |
 | **ویندوز (Windows)** | `TOM-AI-Setup.exe` | لانچر نصبی بومی ۶۴ بیتی | حدود ۲.۵ کیلوبایت | [📥 دانلود مستقیم EXE](./downloads/TOM-AI-Setup.exe) |
-| **ویندوز (بسته آفلاین)** | `TOM-AI-Windows-Package.zip` | پکیج کامل آفلاین + اسکریپت میانبر | حدود ۱۰۷ کیلوبایت | [📦 دانلود پکیج آفلاین ZIP](./downloads/TOM-AI-Windows-Package.zip) |
+| **ویندوز (بسته آفلاین)** | `TOM-AI-Windows-Package.zip` | پکیج کامل آفلاین + اسکریپت میانبر | حدود ۵۹۲ کیلوبایت | [📦 دانلود پکیج آفلاین ZIP](./downloads/TOM-AI-Windows-Package.zip) |
+| **ویدیو تبلیغاتی** | `TOM-AI-Commercial-Ad.mp4` | تیزر رسمی با کیفیت 720p HD | حدود ۲.۴۵ مگابایت | [🎬 دانلود ویدیو MP4](./downloads/TOM-AI-Commercial-Ad.mp4) |
 
 #### 📱 راهنمای نصب در اندروید:
 ۱. روی دکمه **[دانلود مستقیم APK](./downloads/TOM-AI-v4.5.apk)** کلیک کرده یا در گوشی اندروید دانلود کنید.
@@ -176,6 +197,12 @@ https://Taymaz1391.github.io/RVG/
 ۱. فایل **[TOM-AI-Setup.exe](./downloads/TOM-AI-Setup.exe)** را دانلود کرده و اجرا کنید.
 ۲. جهت ساخت خودکار میانبر روی دسکتاپ و استارت‌منو، پکیج **[TOM-AI-Windows-Package.zip](./downloads/TOM-AI-Windows-Package.zip)** را استخراج کرده و فایل `Install-TOM-AI.bat` را اجرا نمایید.
 ۳. برای کارکرد **۱۰۰٪ آفلاین و بدون نیاز به هیچ اینترنتی**، فایل `Start-Offline-Server.bat` درون بسته را اجرا کنید.
+
+### 🎬 ویدیو تیزر تبلیغاتی و کیت برندینگ رسمی:
+- **ویدیو تیزر تبلیغاتی با موسیقی سینمایی الکترونیک:** [دانلود فایل MP4](./downloads/TOM-AI-Commercial-Ad.mp4)
+- **بنر رسمی شبکه‌های اجتماعی (۱۲۰۰ در ۶۳۰):** [مشاهده بنر](./assets/branding/tom-social-banner.png)
+- **پوستر معرفی اپلیکیشن موبایل (۱۰۸۰ در ۱۹۲۰):** [مشاهده پوستر](./assets/branding/tom-app-store-poster.png)
+- **دفترچه راهنمای هویت بصری، رنگ‌ها و شعار برند:** [مشاهده دستورالعمل برندینگ](./assets/branding/tom-brand-guidelines.md)
 
 ### 🌟 ویژگی‌ها و نوآوری‌های اضافه شده:
 

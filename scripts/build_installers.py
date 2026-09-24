@@ -37,7 +37,10 @@ def ensure_dirs():
 # 1. GENERATE ICONS
 # ==========================================
 def generate_icons():
-    print("[*] Generating application icons...")
+    print("[*] Checking application icons...")
+    if os.path.exists(os.path.join(ASSETS_DIR, "icon-512.png")) and os.path.exists(os.path.join(ASSETS_DIR, "icon-192.png")):
+        print("    -> Using official TOM AI brand emblem icons.")
+        return
     def draw_app_icon(size):
         img = Image.new("RGBA", (size, size), (15, 17, 23, 255))
         draw = ImageDraw.Draw(img)
@@ -643,7 +646,8 @@ def generate_manifest():
         ("TOM-AI-Setup.exe", "Windows 64-bit Native Launcher & Installer", "Windows 10/11 x64", "exe"),
         ("TOM-AI-v4.5.apk", "Android Signed APK Application Package", "Android 7.0+", "apk"),
         ("TOM-AI-Windows-Package.zip", "Complete Windows Offline Suite & Setup Scripts", "Windows 7/8/10/11", "zip"),
-        ("TOM-AI-Android-Package.zip", "Android Package with ADB 1-Click Installer", "Android / All Devices", "zip")
+        ("TOM-AI-Android-Package.zip", "Android Package with ADB 1-Click Installer", "Android / All Devices", "zip"),
+        ("TOM-AI-Commercial-Ad.mp4", "Official 720p HD Branding & Commercial Teaser Video", "All Platforms (MP4)", "mp4")
     ]
 
     items = []

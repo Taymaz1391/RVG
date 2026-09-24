@@ -86,6 +86,7 @@ class TomApp {
     this.exportModal = document.getElementById('exportModal');
     this.githubPagesModal = document.getElementById('githubPagesModal');
     this.downloadsModal = document.getElementById('downloadsModal');
+    this.brandingModal = document.getElementById('brandingModal');
     this.toastContainer = document.getElementById('toastContainer');
   }
 
@@ -99,6 +100,21 @@ class TomApp {
     document.getElementById('btnOpenDownloadsModal')?.addEventListener('click', openDownloads);
     document.getElementById('btnCloseDownloadsModal')?.addEventListener('click', () => {
       this.downloadsModal?.classList.remove('active');
+    });
+
+    // Branding & Video modal
+    const openBranding = () => {
+      this.closeAllModals();
+      this.brandingModal?.classList.add('active');
+      const video = document.getElementById('commercialVideoPlayer');
+      if (video) video.currentTime = 0;
+    };
+    document.getElementById('btnHeaderBranding')?.addEventListener('click', openBranding);
+    document.getElementById('btnOpenBrandingModal')?.addEventListener('click', openBranding);
+    document.getElementById('btnCloseBrandingModal')?.addEventListener('click', () => {
+      this.brandingModal?.classList.remove('active');
+      const video = document.getElementById('commercialVideoPlayer');
+      if (video) video.pause();
     });
 
     // GitHub Pages modal
@@ -894,6 +910,9 @@ class TomApp {
     this.closeExportModal();
     this.githubPagesModal?.classList.remove('active');
     this.downloadsModal?.classList.remove('active');
+    this.brandingModal?.classList.remove('active');
+    const video = document.getElementById('commercialVideoPlayer');
+    if (video) video.pause();
     document.getElementById('personasModal')?.classList.remove('active');
     this.canvasArtifacts?.close();
     this.voiceMode?.close();

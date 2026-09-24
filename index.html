@@ -79,6 +79,14 @@
           <span>📦 Download APK & EXE</span>
         </button>
 
+        <!-- Brand Video & Ads Link -->
+        <button class="btn-sidebar-link" id="btnOpenBrandingModal" style="background:rgba(245, 158, 11, 0.12); border:1px solid rgba(245, 158, 11, 0.3); color:#fbbf24; font-weight:600;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <span>🎬 Brand Video & Ads</span>
+        </button>
+
         <!-- GitHub Pages Publishing Guide Trigger -->
         <button class="btn-sidebar-link" id="btnOpenGitHubPagesModal" style="background:rgba(34, 197, 94, 0.12); border:1px solid rgba(34, 197, 94, 0.3); color:#4ade80; font-weight:600;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -181,6 +189,14 @@
               <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
             <span>Download Apps</span>
+          </button>
+
+          <!-- Brand & Video Commercial Trigger -->
+          <button class="header-action-btn" id="btnHeaderBranding" title="Official Brand Video & Advertising Kit" style="width:auto; padding:0 10px; font-size:12.5px; font-weight:600; display:flex; gap:6px; color:#f59e0b; border:1px solid rgba(245, 158, 11, 0.35); background:rgba(245, 158, 11, 0.1);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>🎬 Brand Video</span>
           </button>
 
           <!-- Personas Trigger -->
@@ -1009,23 +1025,112 @@
                 <tr>
                   <td><code>TOM-AI-v4.5.apk</code></td>
                   <td>Android 7.0+</td>
-                  <td>89.7 KB</td>
-                  <td><span class="hash-code">1cac3a9ae8078e49e165805bb43f6ee15e0d07a3101a0df0777082b081ae02db</span></td>
+                  <td>610.1 KB</td>
+                  <td><span class="hash-code">1596fb8b8ffdda0ed2301d57989703021b284b95df358f3d3e50d2ef8c2abaf2</span></td>
                 </tr>
                 <tr>
                   <td><code>TOM-AI-Windows-Package.zip</code></td>
                   <td>Windows Suite</td>
-                  <td>110.3 KB</td>
-                  <td><span class="hash-code">d324212caa8c890f266863ee54c3ccc273821b230bb1baff810752832908f18a</span></td>
+                  <td>592.3 KB</td>
+                  <td><span class="hash-code">93df735b6a4064775dae7a5ac851d296c153b6cd3503ea3e1a7e7cfd497ef015</span></td>
                 </tr>
                 <tr>
                   <td><code>TOM-AI-Android-Package.zip</code></td>
                   <td>Android + ADB</td>
-                  <td>96.0 KB</td>
-                  <td><span class="hash-code">10c59d7f967b6993aa4cb02de3f40df80f85312cd48b9d7d4687b6c3840fe65d</span></td>
+                  <td>1.01 MB</td>
+                  <td><span class="hash-code">54b4b4603c87a7bf5361ef5d92cf724ed1a9b32ceab0d7bf838f42f74606dc7a</span></td>
+                </tr>
+                <tr>
+                  <td><code>TOM-AI-Commercial-Ad.mp4</code></td>
+                  <td>Commercial Video</td>
+                  <td>2.45 MB</td>
+                  <td><span class="hash-code">9a304d3b1369607d07101494325af55fae814417f238cf163dd499a2053bfcb5</span></td>
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Brand & Commercial Video Modal -->
+  <div class="modal-overlay" id="brandingModal">
+    <div class="modal-box" style="max-width:760px;">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:24px;">🎬</span>
+          <div>
+            <h2 class="modal-title" style="margin:0;">TOM AI — Brand Video & Advertising Kit</h2>
+            <div style="font-size:12px; color:var(--text-muted);">ویدیو و تیزر تبلیغاتی برندینگ • پوسترهای رسمی و فایل نصبی</div>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="btnCloseBrandingModal">✕</button>
+      </div>
+
+      <div class="modal-body" style="gap:16px;">
+        <!-- Embedded Video Player -->
+        <div style="background:#000; border-radius:12px; overflow:hidden; border:1px solid var(--border-color); box-shadow:0 10px 25px rgba(0,0,0,0.5);">
+          <video id="commercialVideoPlayer" controls playsinline style="width:100%; aspect-ratio:16/9; display:block;" poster="./assets/branding/tom-social-banner.png">
+            <source src="./assets/tom-brand-commercial.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <div>
+            <h3 style="font-size:15px; font-weight:600; margin:0 0 4px 0;">Official Commercial Teaser (720p HD)</h3>
+            <p style="font-size:12px; color:var(--text-secondary); margin:0;">20 seconds • Ambient Electronic Synth Audio • Zero-API Feature Showcase</p>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <a href="./assets/tom-brand-commercial.mp4" download="TOM-AI-Commercial-Ad.mp4" class="btn-download-main" style="background:#f59e0b; color:#000; font-weight:700;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Download Video (.mp4)</span>
+            </a>
+            <a href="./downloads/TOM-AI-v4.5.apk" download="TOM-AI-v4.5.apk" class="btn-download-main" style="background:var(--accent-primary);">
+              <span>📱 Download APK</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Advertising Graphics Cards -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px;">
+          <div class="download-card" style="padding:12px;">
+            <img src="./assets/branding/tom-social-banner.png" alt="Social Media Card" style="width:100%; border-radius:8px; display:block; aspect-ratio:1200/630; object-fit:cover;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+              <span style="font-size:12px; font-weight:600;">Social Media Banner (1200x630)</span>
+              <a href="./assets/branding/tom-social-banner.png" download="tom-social-banner.png" class="btn-download-sub" style="padding:4px 10px; font-size:11px;">Save</a>
+            </div>
+          </div>
+
+          <div class="download-card" style="padding:12px;">
+            <img src="./assets/branding/tom-app-store-poster.png" alt="App Store Poster" style="width:100%; border-radius:8px; display:block; aspect-ratio:1200/630; object-fit:cover; object-position:top;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+              <span style="font-size:12px; font-weight:600;">Mobile App Poster (1080x1920)</span>
+              <a href="./assets/branding/tom-app-store-poster.png" download="tom-app-store-poster.png" class="btn-download-sub" style="padding:4px 10px; font-size:11px;">Save</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brand Identity Palette -->
+        <div class="install-guide-box" style="margin-top:4px;">
+          <h4 style="font-size:13px; font-weight:600; margin:0 0 10px 0; color:var(--text-primary);">🎨 Brand Identity Specs & Color Palette</h4>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <div style="display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.05); padding:4px 10px; border-radius:6px; font-size:12px;">
+              <span style="width:14px; height:14px; border-radius:3px; background:#10a37f; display:inline-block;"></span>
+              <span>Primary: <code>#10a37f</code></span>
+            </div>
+            <div style="display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.05); padding:4px 10px; border-radius:6px; font-size:12px;">
+              <span style="width:14px; height:14px; border-radius:3px; background:#0ea5e9; display:inline-block;"></span>
+              <span>Accent: <code>#0ea5e9</code></span>
+            </div>
+            <div style="display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.05); padding:4px 10px; border-radius:6px; font-size:12px;">
+              <span style="width:14px; height:14px; border-radius:3px; background:#0b0f19; border:1px solid #334155; display:inline-block;"></span>
+              <span>Obsidian: <code>#0b0f19</code></span>
+            </div>
+            <div style="display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.05); padding:4px 10px; border-radius:6px; font-size:12px;">
+              <span>Slogan: <em>"The Autonomous Frontier of Intelligence"</em></span>
+            </div>
           </div>
         </div>
       </div>

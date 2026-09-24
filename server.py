@@ -42,6 +42,10 @@ class TOMHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
             return "application/x-msdownload"
         elif path.endswith(".zip"):
             return "application/zip"
+        elif path.endswith(".mp4"):
+            return "video/mp4"
+        elif path.endswith(".png"):
+            return "image/png"
         return super().guess_type(path)
 
     def log_message(self, format, *args):
