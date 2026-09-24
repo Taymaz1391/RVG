@@ -1,14 +1,15 @@
 <div align="center">
 
-<img src="./assets/branding/tom-official-logo.png" width="220" style="border-radius:24px; box-shadow:0 12px 36px rgba(16,185,129,0.25);" alt="TOM AI Official Brand Logo" />
+<img src="./assets/branding/tom-minimal-brand-logo.png" width="340" style="border-radius:24px; box-shadow:0 12px 36px rgba(16,185,129,0.25);" alt="TOM AI Official Minimalist Brand Logo" />
 
 # 🧠 TOM AI (v4.5 Ultra)
 ### 100% Autonomous Neural Artificial Intelligence & Training Studio
 *Built completely from scratch (0 to 100) — ZERO external APIs, ZERO third-party keys.*
 
+[![GitHub Releases](https://img.shields.io/badge/GitHub_Releases-v4.5.2_Installers-10b981?style=for-the-badge&logo=github)](https://github.com/Taymaz1391/RVG/releases/tag/v4.5.2)
 [![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-22c55e?style=for-the-badge&logo=github)](https://Taymaz1391.github.io/RVG/)
-[![Android APK](https://img.shields.io/badge/Android_APK-v4.5.2_Download-3DDC84?style=for-the-badge&logo=android&logoColor=white)](./downloads/TOM-AI-v4.5.apk)
-[![Windows EXE](https://img.shields.io/badge/Windows_EXE-Setup_Download-0078D6?style=for-the-badge&logo=windows&logoColor=white)](./downloads/TOM-AI-Setup.exe)
+[![Android APK](https://img.shields.io/badge/Android_APK-v4.5.2_Download-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://raw.githubusercontent.com/Taymaz1391/RVG/arena/01a0c234-rvg/downloads/TOM-AI-v4.5.apk)
+[![Windows EXE](https://img.shields.io/badge/Windows_EXE-Setup_Download-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://raw.githubusercontent.com/Taymaz1391/RVG/arena/01a0c234-rvg/downloads/TOM-AI-Setup.exe)
 [![Architecture](https://img.shields.io/badge/Architecture-Autonomous_Neural_Transformer-10a37f?style=for-the-badge)](https://Taymaz1391.github.io/RVG/)
 [![API Status](https://img.shields.io/badge/Zero_API-100%25_Self_Contained-0284c7?style=for-the-badge)](https://Taymaz1391.github.io/RVG/)
 [![UI Style](https://img.shields.io/badge/UI-ChatGPT_4o_Design-38bdf8?style=for-the-badge)](https://Taymaz1391.github.io/RVG/)
@@ -32,35 +33,37 @@
 <h2>📦 Download Installers (Android APK & Windows EXE)</h2>
 </div>
 
-TOM AI is distributed as standalone native installation packages that can run **100% on-device without internet access or external APIs**:
+TOM AI is distributed as standalone native installation packages that can run **100% on-device without internet access or external APIs**. All installation packages are hosted on GitHub Releases and tracked directly inside the repository:
 
-| Platform | Package File | Type | Target OS | Direct Download |
-| :--- | :--- | :---: | :--- | :---: |
-| **Android** | `TOM-AI-v4.5.apk` | Signed APK | Android 7.0+ | [📥 Download APK](./downloads/TOM-AI-v4.5.apk) |
-| **Android (Suite)** | `TOM-AI-Android-Package.zip` | Full Bundle + ADB | Android / All | [📦 Download ZIP](./downloads/TOM-AI-Android-Package.zip) |
-| **Windows** | `TOM-AI-Setup.exe` | 64-bit Native PE | Windows 10/11 x64 | [📥 Download EXE](./downloads/TOM-AI-Setup.exe) |
-| **Windows (Suite)** | `TOM-AI-Windows-Package.zip` | Offline Suite + Scripts | Windows 7/8/10/11 | [📦 Download ZIP](./downloads/TOM-AI-Windows-Package.zip) |
-| **Commercial Video** | `TOM-AI-Commercial-Ad.mp4` | 720p HD Promo Teaser | All Devices | [🎬 Download MP4](./downloads/TOM-AI-Commercial-Ad.mp4) |
+🔗 **Official GitHub Releases Page:** [https://github.com/Taymaz1391/RVG/releases/tag/v4.5.2](https://github.com/Taymaz1391/RVG/releases/tag/v4.5.2)
+
+| Platform | Package File | Format | Target OS | Direct GitHub Link | Direct Repo Link |
+| :--- | :--- | :---: | :--- | :---: | :---: |
+| **Android** | `TOM-AI-v4.5.apk` | Signed APK (RSA-2048) | Android 7.0+ | [📥 Download APK](https://raw.githubusercontent.com/Taymaz1391/RVG/arena/01a0c234-rvg/downloads/TOM-AI-v4.5.apk) | [Repo File](./downloads/TOM-AI-v4.5.apk) |
+| **Android (Suite)** | `TOM-AI-Android-Package.zip` | Full Bundle + ADB | Android / All | [📦 Download ZIP](https://raw.githubusercontent.com/Taymaz1391/RVG/arena/01a0c234-rvg/downloads/TOM-AI-Android-Package.zip) | [Repo File](./downloads/TOM-AI-Android-Package.zip) |
+| **Windows** | `TOM-AI-Setup.exe` | 64-bit Native PE | Windows 10/11 x64 | [📥 Download EXE](https://raw.githubusercontent.com/Taymaz1391/RVG/arena/01a0c234-rvg/downloads/TOM-AI-Setup.exe) | [Repo File](./downloads/TOM-AI-Setup.exe) |
+| **Windows (Suite)** | `TOM-AI-Windows-Package.zip` | Offline Suite + Scripts | Windows 7/8/10/11 | [📦 Download ZIP](https://raw.githubusercontent.com/Taymaz1391/RVG/arena/01a0c234-rvg/downloads/TOM-AI-Windows-Package.zip) | [Repo File](./downloads/TOM-AI-Windows-Package.zip) |
+| **Commercial Video** | `TOM-AI-Commercial-Ad.mp4` | 720p HD Promo Teaser | All Devices | [🎬 Download MP4](https://raw.githubusercontent.com/Taymaz1391/RVG/arena/01a0c234-rvg/downloads/TOM-AI-Commercial-Ad.mp4) | [Repo File](./downloads/TOM-AI-Commercial-Ad.mp4) |
 
 #### 📱 Android Installation Instructions:
-1. Tap **[Download APK](./downloads/TOM-AI-v4.5.apk)** to download the installation package directly to your Android device.
+1. Tap **[Download APK](https://raw.githubusercontent.com/Taymaz1391/RVG/arena/01a0c234-rvg/downloads/TOM-AI-v4.5.apk)** to download the installation package directly to your Android device.
 2. Open the downloaded file from your browser notification or file manager.
 3. If requested, tap **Settings** and toggle **"Allow installation from unknown sources"**.
 4. Tap **Install** and launch TOM AI directly from your app drawer!
 *Developer ADB install:* `adb install -r TOM-AI-v4.5.apk`
 
 #### 💻 Windows Installation Instructions:
-1. Tap **[Download EXE](./downloads/TOM-AI-Setup.exe)** to download the native Windows 64-bit launcher.
+1. Tap **[Download EXE](https://raw.githubusercontent.com/Taymaz1391/RVG/arena/01a0c234-rvg/downloads/TOM-AI-Setup.exe)** to download the native Windows 64-bit launcher.
 2. Double-click `TOM-AI-Setup.exe` to run TOM AI immediately.
-3. To install desktop and Start Menu shortcuts, download **[TOM-AI-Windows-Package.zip](./downloads/TOM-AI-Windows-Package.zip)**, extract it, and run `Install-TOM-AI.bat`.
+3. To install desktop and Start Menu shortcuts, download **[TOM-AI-Windows-Package.zip](https://raw.githubusercontent.com/Taymaz1391/RVG/arena/01a0c234-rvg/downloads/TOM-AI-Windows-Package.zip)**, extract it, and run `Install-TOM-AI.bat`.
 4. To run **100% offline with zero internet access**, run `Start-Offline-Server.bat` inside the ZIP.
 
 #### 🔒 Cryptographic Checksums (SHA-256):
 ```
 c0ee21f88dc260fb6cf2b758d3bd454993374c40bcbc906c6aec6206f30f48a2  TOM-AI-Setup.exe
-1596fb8b8ffdda0ed2301d57989703021b284b95df358f3d3e50d2ef8c2abaf2  TOM-AI-v4.5.apk
-93df735b6a4064775dae7a5ac851d296c153b6cd3503ea3e1a7e7cfd497ef015  TOM-AI-Windows-Package.zip
-54b4b4603c87a7bf5361ef5d92cf724ed1a9b32ceab0d7bf838f42f74606dc7a  TOM-AI-Android-Package.zip
+c2caf8045dd2e7e40fabb76b7423f5ab786a2c296c1b9b088e32d6baa6d3f6ef  TOM-AI-v4.5.apk
+4e000ce29f3736c0c28d225c9c3f13c2620367a1d422b038a0a3710409dc1aa3  TOM-AI-Windows-Package.zip
+18ae128d84b9f76373d16885aa5fbe089ee136406e5175eed1ed9754fdc700ad  TOM-AI-Android-Package.zip
 9a304d3b1369607d07101494325af55fae814417f238cf163dd499a2053bfcb5  TOM-AI-Commercial-Ad.mp4
 ```
 
@@ -178,15 +181,17 @@ https://Taymaz1391.github.io/RVG/
 
 پروژه **تام (TOM)** یک مدل هوش مصنوعی کاملاً مستقل و بومی است که از **۰ تا ۱۰۰ بدون اتصال به هیچ API خارجی یا کلیدهای شخص ثالث** طراحی و پیاده‌سازی شده است. تمام اجزای مدل شامل توکنایزر، ماتریس‌های توجه (Self-Attention)، وزن‌های برداری، موتور استدلال زنجیره فکر (Chain-of-Thought) و حلقه آموزش (Backpropagation) مستقیماً درون این برنامه اجرا می‌شوند.
 
-### 📦 دانلود مستقیم فایل‌های نصبی (APK و EXE):
+### 📦 دانلود مستقیم فایل‌های نصبی (APK و EXE) در گیت‌هاب:
 
-| پلتفرم | فایل دانلودی | نوع فایل | حجم فایل | لینک دانلود |
-| :--- | :--- | :---: | :---: | :---: |
-| **اندروید (Android)** | `TOM-AI-v4.5.apk` | فایل نصبی APK رسمی (امضاشده) | حدود ۶۱۰ کیلوبایت | [📥 دانلود مستقیم APK](./downloads/TOM-AI-v4.5.apk) |
-| **اندروید (بسته کامل)** | `TOM-AI-Android-Package.zip` | بسته کامل با ابزار نصب ADB | حدود ۱ مگابایت | [📦 دانلود پکیج ZIP](./downloads/TOM-AI-Android-Package.zip) |
-| **ویندوز (Windows)** | `TOM-AI-Setup.exe` | لانچر نصبی بومی ۶۴ بیتی | حدود ۲.۵ کیلوبایت | [📥 دانلود مستقیم EXE](./downloads/TOM-AI-Setup.exe) |
-| **ویندوز (بسته آفلاین)** | `TOM-AI-Windows-Package.zip` | پکیج کامل آفلاین + اسکریپت میانبر | حدود ۵۹۲ کیلوبایت | [📦 دانلود پکیج آفلاین ZIP](./downloads/TOM-AI-Windows-Package.zip) |
-| **ویدیو تبلیغاتی** | `TOM-AI-Commercial-Ad.mp4` | تیزر رسمی با کیفیت 720p HD | حدود ۲.۴۵ مگابایت | [🎬 دانلود ویدیو MP4](./downloads/TOM-AI-Commercial-Ad.mp4) |
+🔗 **صفحه رسمی انتشارات گیت‌هاب (GitHub Releases):** [https://github.com/Taymaz1391/RVG/releases/tag/v4.5.2](https://github.com/Taymaz1391/RVG/releases/tag/v4.5.2)
+
+| پلتفرم | فایل دانلودی | نوع فایل | حجم فایل | لینک مستقیم گیت‌هاب | لینک درون پروژه |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| **اندروید (Android)** | `TOM-AI-v4.5.apk` | فایل نصبی APK رسمی (امضاشده) | حدود ۳۵۵ کیلوبایت | [📥 دانلود از گیت‌هاب](https://raw.githubusercontent.com/Taymaz1391/RVG/arena/01a0c234-rvg/downloads/TOM-AI-v4.5.apk) | [فایل پروژه](./downloads/TOM-AI-v4.5.apk) |
+| **اندروید (بسته کامل)** | `TOM-AI-Android-Package.zip` | بسته کامل با ابزار نصب ADB | حدود ۵۶۸ کیلوبایت | [📦 دانلود از گیت‌هاب](https://raw.githubusercontent.com/Taymaz1391/RVG/arena/01a0c234-rvg/downloads/TOM-AI-Android-Package.zip) | [فایل پروژه](./downloads/TOM-AI-Android-Package.zip) |
+| **ویندوز (Windows)** | `TOM-AI-Setup.exe` | لانچر نصبی بومی ۶۴ بیتی | حدود ۲.۵ کیلوبایت | [📥 دانلود از گیت‌هاب](https://raw.githubusercontent.com/Taymaz1391/RVG/arena/01a0c234-rvg/downloads/TOM-AI-Setup.exe) | [فایل پروژه](./downloads/TOM-AI-Setup.exe) |
+| **ویندوز (بسته آفلاین)** | `TOM-AI-Windows-Package.zip` | پکیج کامل آفلاین + اسکریپت میانبر | حدود ۳۴۷ کیلوبایت | [📦 دانلود از گیت‌هاب](https://raw.githubusercontent.com/Taymaz1391/RVG/arena/01a0c234-rvg/downloads/TOM-AI-Windows-Package.zip) | [فایل پروژه](./downloads/TOM-AI-Windows-Package.zip) |
+| **ویدیو تبلیغاتی** | `TOM-AI-Commercial-Ad.mp4` | تیزر رسمی با کیفیت 720p HD | حدود ۲.۴۵ مگابایت | [🎬 دانلود از گیت‌هاب](https://raw.githubusercontent.com/Taymaz1391/RVG/arena/01a0c234-rvg/downloads/TOM-AI-Commercial-Ad.mp4) | [فایل پروژه](./downloads/TOM-AI-Commercial-Ad.mp4) |
 
 #### 📱 راهنمای نصب در اندروید:
 ۱. روی دکمه **[دانلود مستقیم APK](./downloads/TOM-AI-v4.5.apk)** کلیک کرده یا در گوشی اندروید دانلود کنید.

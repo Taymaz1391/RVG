@@ -20,9 +20,9 @@
       "description": "Android Signed APK Application Package",
       "os": "Android 7.0+",
       "type": "apk",
-      "size_bytes": 624783,
-      "size_formatted": "610.1 KB",
-      "sha256": "1596fb8b8ffdda0ed2301d57989703021b284b95df358f3d3e50d2ef8c2abaf2",
+      "size_bytes": 363458,
+      "size_formatted": "354.9 KB",
+      "sha256": "c2caf8045dd2e7e40fabb76b7423f5ab786a2c296c1b9b088e32d6baa6d3f6ef",
       "url": "./downloads/TOM-AI-v4.5.apk"
     },
     {
@@ -30,9 +30,9 @@
       "description": "Complete Windows Offline Suite & Setup Scripts",
       "os": "Windows 7/8/10/11",
       "type": "zip",
-      "size_bytes": 606526,
-      "size_formatted": "592.3 KB",
-      "sha256": "93df735b6a4064775dae7a5ac851d296c153b6cd3503ea3e1a7e7cfd497ef015",
+      "size_bytes": 355622,
+      "size_formatted": "347.3 KB",
+      "sha256": "4e000ce29f3736c0c28d225c9c3f13c2620367a1d422b038a0a3710409dc1aa3",
       "url": "./downloads/TOM-AI-Windows-Package.zip"
     },
     {
@@ -40,9 +40,9 @@
       "description": "Android Package with ADB 1-Click Installer",
       "os": "Android / All Devices",
       "type": "zip",
-      "size_bytes": 1034684,
-      "size_formatted": "1010.4 KB",
-      "sha256": "54b4b4603c87a7bf5361ef5d92cf724ed1a9b32ceab0d7bf838f42f74606dc7a",
+      "size_bytes": 581549,
+      "size_formatted": "567.9 KB",
+      "sha256": "18ae128d84b9f76373d16885aa5fbe089ee136406e5175eed1ed9754fdc700ad",
       "url": "./downloads/TOM-AI-Android-Package.zip"
     },
     {
