@@ -1,0 +1,59 @@
+{
+  "app_name": "TOM AI",
+  "version": "4.5.2 Ultra",
+  "release_date": "2026-09-24",
+  "zero_api": true,
+  "offline_ready": true,
+  "packages": [
+    {
+      "filename": "TOM-AI-Setup.exe",
+      "description": "Windows 64-bit Native Launcher & Installer",
+      "os": "Windows 10/11 x64",
+      "type": "exe",
+      "size_bytes": 2560,
+      "size_formatted": "2.5 KB",
+      "sha256": "c0ee21f88dc260fb6cf2b758d3bd454993374c40bcbc906c6aec6206f30f48a2",
+      "url": "./downloads/TOM-AI-Setup.exe"
+    },
+    {
+      "filename": "TOM-AI-v4.5.apk",
+      "description": "Android Signed APK Application Package",
+      "os": "Android 7.0+",
+      "type": "apk",
+      "size_bytes": 363458,
+      "size_formatted": "354.9 KB",
+      "sha256": "c2caf8045dd2e7e40fabb76b7423f5ab786a2c296c1b9b088e32d6baa6d3f6ef",
+      "url": "./downloads/TOM-AI-v4.5.apk"
+    },
+    {
+      "filename": "TOM-AI-Windows-Package.zip",
+      "description": "Complete Windows Offline Suite & Setup Scripts",
+      "os": "Windows 7/8/10/11",
+      "type": "zip",
+      "size_bytes": 355622,
+      "size_formatted": "347.3 KB",
+      "sha256": "4e000ce29f3736c0c28d225c9c3f13c2620367a1d422b038a0a3710409dc1aa3",
+      "url": "./downloads/TOM-AI-Windows-Package.zip"
+    },
+    {
+      "filename": "TOM-AI-Android-Package.zip",
+      "description": "Android Package with ADB 1-Click Installer",
+      "os": "Android / All Devices",
+      "type": "zip",
+      "size_bytes": 581549,
+      "size_formatted": "567.9 KB",
+      "sha256": "18ae128d84b9f76373d16885aa5fbe089ee136406e5175eed1ed9754fdc700ad",
+      "url": "./downloads/TOM-AI-Android-Package.zip"
+    },
+    {
+      "filename": "TOM-AI-Commercial-Ad.mp4",
+      "description": "Official 720p HD Branding & Commercial Teaser Video",
+      "os": "All Platforms (MP4)",
+      "type": "mp4",
+      "size_bytes": 2572385,
+      "size_formatted": "2.45 MB",
+      "sha256": "9a304d3b1369607d07101494325af55fae814417f238cf163dd499a2053bfcb5",
+      "url": "./downloads/TOM-AI-Commercial-Ad.mp4"
+    }
+  ]
+}
